@@ -48,7 +48,7 @@
 	<div class="row" style="background-color: #2c2e35;">
 		<div class="col" style="margin-bottom: 15px; text-align: center"><a href="#" style="text-decoration: none; color: white;">{translate key = "navigation.main"}</a></div>
 		<div class="col" style="margin-bottom: 15px; text-align: center"><a href="/index.php/sr/issue/current" style="text-decoration: none; color: white;">{translate key = "navigation.current"}</a></div>
-		<div class="col" style="margin-bottom: 15px; text-align: center"><a href="/index.php/sr/issue/issueAuthors.tpl" style="text-decoration: none; color: white;">{translate key = "navigation.for_authors"}</a></div>
+		<div class="col" style="margin-bottom: 15px; text-align: center"><a href="/index.php/sr/authors" style="text-decoration: none; color: white;">{translate key = "navigation.for_authors"}</a></div>
 		<div class="col" style="margin-bottom: 15px; text-align: center"><a href="/index.php/sr/issue/archive" style="text-decoration: none; color: white;">{translate key = "navigation.archive"}</a></div>
 		<div class="col" style="margin-bottom: 15px; text-align: center"><a href="#" style="text-decoration: none; color: white;">{translate key = "navigation.redaction"}</a></div>
 		<div class="col" style="margin-bottom: 15px; text-align: center"><a href="#" style="text-decoration: none; color: white;">{translate key = "navigation.contacts"}</a></div>

@@ -4,7 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ac1f5c80-31cb-46fe-bd3d-2334b4087602" name="Changes" comment="" />
+    <list default="true" id="ac1f5c80-31cb-46fe-bd3d-2334b4087602" name="Changes" comment="база">
+      <change afterPath="$PROJECT_DIR$/DB.inc.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pkp/pages/authors/AuthorsContextHandler.inc.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pkp/pages/authors/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/authors/AuthorsHandler.inc.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/authors/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cache/t_compile/00a0a0910209607cb33eb0fe6474f30ed7399ed7^10ae5578a0959129b8d4ceeb9f99c1bb2a9cbd65_0.app.frontendcomponentsheader..php" beforeDir="false" afterPath="$PROJECT_DIR$/cache/t_compile/00a0a0910209607cb33eb0fe6474f30ed7399ed7^10ae5578a0959129b8d4ceeb9f99c1bb2a9cbd65_0.app.frontendcomponentsheader..php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cache/t_compile/e26d2de610226743d9feff244fb14ef53700227f^10ae5578a0959129b8d4ceeb9f99c1bb2a9cbd65_0.app.frontendcomponentsheader..php" beforeDir="false" afterPath="$PROJECT_DIR$/cache/t_compile/e26d2de610226743d9feff244fb14ef53700227f^10ae5578a0959129b8d4ceeb9f99c1bb2a9cbd65_0.app.frontendcomponentsheader..php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cache/t_compile/e26d2de610226743d9feff244fb14ef53700227f^4dffb64063bb972c37e05619a2ccd9d0ea7473ac_0.app.frontendcomponentsfooter..php" beforeDir="false" afterPath="$PROJECT_DIR$/cache/t_compile/e26d2de610226743d9feff244fb14ef53700227f^4dffb64063bb972c37e05619a2ccd9d0ea7473ac_0.app.frontendcomponentsfooter..php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cache/t_compile/ef41840365eca71858acbf33bf485b9a16b48ad5^10ae5578a0959129b8d4ceeb9f99c1bb2a9cbd65_0.app.frontendcomponentsheader..php" beforeDir="false" afterPath="$PROJECT_DIR$/cache/t_compile/ef41840365eca71858acbf33bf485b9a16b48ad5^10ae5578a0959129b8d4ceeb9f99c1bb2a9cbd65_0.app.frontendcomponentsheader..php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pkp/templates/frontend/components/1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pkp/templates/frontend/components/footer.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pkp/templates/frontend/components/footer.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pkp/templates/frontend/components/header.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pkp/templates/frontend/components/header.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/issue/Class.inc.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/frontend/pages/issueAuthors.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/templates/frontend/pages/issueAuthors.tpl" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,7 +35,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/pages/issue/IssueHandler.inc.php" root0="FORCE_HIGHLIGHTING" root1="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/lib/pkp/templates/frontend/components/header.tpl" root0="FORCE_HIGHLIGHTING" root1="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/pages/issue/Class.inc.php" root0="FORCE_HIGHLIGHTING" root1="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/DB.inc.php" root0="FORCE_HIGHLIGHTING" root1="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/lib/pkp/templates/frontend/components/footer.tpl" root0="FORCE_HIGHLIGHTING" root1="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/lib/pkp/controllers/page/PageHandler.inc.php" root0="FORCE_HIGHLIGHTING" root1="SKIP_INSPECTION" />
   </component>
@@ -34,7 +50,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/journals/1" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/pkp/pages/authors" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -44,6 +60,9 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\OSPanel\domains\ojs\lib\pkp\pages\authors" />
+      <recent name="C:\OSPanel\domains\ojs\pages\authors" />
+      <recent name="C:\OSPanel\domains\ojs" />
       <recent name="C:\OSPanel\domains\ojs\public\journals\1" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -58,8 +77,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1665565304589</updated>
-      <workItem from="1665565313313" duration="31791000" />
+      <workItem from="1665565313313" duration="49354000" />
     </task>
+    <task id="LOCAL-00001" summary="база">
+      <created>1665680247399</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1665680247399</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -75,5 +102,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="база" />
+    <option name="LAST_COMMIT_MESSAGE" value="база" />
   </component>
 </project>

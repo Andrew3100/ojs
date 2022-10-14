@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2022-10-13 17:12:47
+/* Smarty version 3.1.39, created on 2022-10-14 15:33:05
   from 'app:frontendcomponentsheader.' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_63481cdfeae169_84877082',
+  'unifunc' => 'content_6349570162a424_20476480',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '10ae5578a0959129b8d4ceeb9f99c1bb2a9cbd65' => 
     array (
       0 => 'app:frontendcomponentsheader.',
-      1 => 1665670358,
+      1 => 1665749097,
       2 => 'app',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'app:frontend/components/headerHead.tpl' => 1,
   ),
 ),false)) {
-function content_63481cdfeae169_84877082 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6349570162a424_20476480 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\OSPanel\\domains\\ojs\\lib\\pkp\\lib\\vendor\\smarty\\smarty\\libs\\plugins\\modifier.replace.php','function'=>'smarty_modifier_replace',),));
 $_smarty_tpl->_assignInScope('showingLogo', true);
 if (!$_smarty_tpl->tpl_vars['displayPageHeaderLogo']->value) {
@@ -70,7 +70,7 @@ if ($_smarty_tpl->tpl_vars['showingLogo']->value) {?> has_site_logo<?php }?>" di
 </a></div>
 		<div class="col" style="margin-bottom: 15px; text-align: center"><a href="/index.php/sr/issue/current" style="text-decoration: none; color: white;"><?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0], array( array('key'=>"navigation.current"),$_smarty_tpl ) );?>
 </a></div>
-		<div class="col" style="margin-bottom: 15px; text-align: center"><a href="/index.php/sr/issue/issueAuthors.tpl" style="text-decoration: none; color: white;"><?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0], array( array('key'=>"navigation.for_authors"),$_smarty_tpl ) );?>
+		<div class="col" style="margin-bottom: 15px; text-align: center"><a href="/index.php/sr/authors" style="text-decoration: none; color: white;"><?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0], array( array('key'=>"navigation.for_authors"),$_smarty_tpl ) );?>
 </a></div>
 		<div class="col" style="margin-bottom: 15px; text-align: center"><a href="/index.php/sr/issue/archive" style="text-decoration: none; color: white;"><?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0], array( array('key'=>"navigation.archive"),$_smarty_tpl ) );?>
 </a></div>

@@ -33,10 +33,10 @@
 	<div class="row" style="background-color: #2c2e35">
 		<div class="col text-center">
 			<div class="col" style="background-color: #2c2e35">
-				<img src="{$publicFilesDir}/dark_footer.png" style="width: 200px; height: 200px; margin-top: 39px; margin-bottom: 39px;">
+				<img src="{$publicFilesDir}/dark_footer.png" style="width: 150px; height: 150px; margin-top: 39px; margin-bottom: 39px;">
 			</div>
 		</div>
-		<div class="col" style="margin-top: 80px;">
+		<div class="col" style="margin-top: 45px;">
 			<div class="row" style="color:white;">
 				<div class="col text-left">
 					{translate key = "navigation.main"}
@@ -53,7 +53,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="col" style="margin-top: 80px;">
+		<div class="col" style="margin-top: 45px;">
 			<div class="row" style="color:white;">
 				<div class="col text-left">
 					{translate key = "navigation.archive"}
