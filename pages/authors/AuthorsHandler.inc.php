@@ -12,22 +12,13 @@ class AuthorsHandler extends AuthorsContextHandler {
      * @param $request PKPRequest
      */
 
-    function getData() {
-        $db = mysqli_connect("localhost", "root", "",'ojs');
-        return mysqli_fetch_assoc(mysqli_query($db,"SELECT * FROM issue_files"));
-    }
-
 
     function index($args, $request) {
+        $DB = new DB;
         $templateMgr = TemplateManager::getManager($request);
         $this->setupTemplate($request);
-
-        $DB = new DB;
-        $DB->get_records_sql();
-
-
         $templateMgr->assign(array(
-            'var' => $this->getData()['original_file_name'],
+            'var' => $DB->get_records_sql("SELECT * FROM versions")[1]->major,
         ));
         $templateMgr->display('frontend/pages/issueAuthors.tpl');
     }

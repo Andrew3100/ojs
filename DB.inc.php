@@ -213,12 +213,19 @@ class DB {
     }
 
     // Метод берёт записи по тексту SQL и формирует из них массив объектов
-    function get_records_sql($sql='SELECT * FROM journal_settings',$print_sql='') {
+    function get_records_sql($sql) {
         $mysqli = $this->setConnect();
         $data = $mysqli->query($sql);
-        echo '<pre>';
-        var_dump($data);
-        echo '</pre>';
+        while ($datum = mysqli_fetch_assoc($data)) {
+            $object = new stdClass();
+            $i = 0;
+            foreach ($datum as $key => $value) {
+                $object->{array_keys($datum)[$i]} = array_values($datum)[$i];
+                $i++;
+            }
+            $array_of_objects[] = $object;
+        }
+    return $array_of_objects;
     }
 
 

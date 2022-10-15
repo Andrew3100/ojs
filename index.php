@@ -59,12 +59,10 @@
  * Bootstrap code for OJS site. Loads required files and then calls the
  * dispatcher to delegate to the appropriate request handler.
  */
-
 // Initialize global environment
 define('INDEX_FILE_LOCATION', __FILE__);
+//define("database", DB);
 $application = require('./lib/pkp/includes/bootstrap.inc.php');
-
 // Serve the request
 $application->execute();
-
-
+import(".DB");
