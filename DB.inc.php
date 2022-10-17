@@ -229,5 +229,18 @@ class DB {
     }
 
 
+    // язык текущего журнала в скоращённом формате строчными буквами (ru, en)
+    function get_current_journal_language() {
+        $mysqli = $this->setConnect();
+        $journal_path = explode('/',((!empty($_SERVER['HTTPS'])) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'])[4];
+        $sql = "SELECT * FROM journals WHERE path = '$journal_path'";
+        $current = $mysqli->query($sql);
+        while ($currents = mysqli_fetch_assoc($current)) {
+            $language = $currents['primary_locale'];
+        }
+        return explode('_',$language)[0];
+    }
+
+
 }
 

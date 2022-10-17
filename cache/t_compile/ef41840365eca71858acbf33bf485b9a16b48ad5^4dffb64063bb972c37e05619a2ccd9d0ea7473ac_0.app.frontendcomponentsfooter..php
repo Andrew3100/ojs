@@ -43,9 +43,9 @@ $_smarty_tpl->smarty->ext->_capture->close($_smarty_tpl);?>
 
 
 <div class="container">
-	<div class="row" style="background-color: #2c2e35">
+	<div class="row" style="background-color:  ">
 		<div class="col text-center">
-			<div class="col" style="background-color: #2c2e35">
+			<div class="col" style="background-color:  ">
 				<img src="<?php echo $_smarty_tpl->tpl_vars['publicFilesDir']->value;?>
 /dark_footer.png" style="width: 200px; height: 200px; margin-top: 39px; margin-bottom: 39px;">
 			</div>

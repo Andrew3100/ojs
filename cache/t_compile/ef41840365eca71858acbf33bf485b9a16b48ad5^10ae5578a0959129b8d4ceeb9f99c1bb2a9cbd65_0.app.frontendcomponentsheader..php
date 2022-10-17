@@ -57,7 +57,7 @@ if ($_smarty_tpl->tpl_vars['showingLogo']->value) {?> has_site_logo<?php }?>" di
 
 	
 	<div class="row">
-		<div class="col" style="background-color: #2c2e35">
+		<div class="col" style="background-color:  ">
 			<img src="<?php echo $_smarty_tpl->tpl_vars['publicFilesDir']->value;?>
 /dark_header.png" style="width: 530px; height: 110px; margin-top: 39px; margin-bottom: 39px;">
 		</div>
@@ -65,7 +65,7 @@ if ($_smarty_tpl->tpl_vars['showingLogo']->value) {?> has_site_logo<?php }?>" di
 
 
 	
-	<div class="row" style="background-color: #2c2e35;">
+	<div class="row" style="background-color:  ;">
 		<div class="col" style="margin-bottom: 15px; text-align: center"><a href="#" style="text-decoration: none; color: white;"><?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0], array( array('key'=>"navigation.main"),$_smarty_tpl ) );?>
 </a></div>
 		<div class="col" style="margin-bottom: 15px; text-align: center"><a href="/index.php/sr/issue/current" style="text-decoration: none; color: white;"><?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0], array( array('key'=>"navigation.current"),$_smarty_tpl ) );?>

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2022-10-14 20:28:01
+/* Smarty version 3.1.39, created on 2022-10-17 19:46:52
   from 'app:frontendcomponentsfooter.' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_63499c21cb1c65_84408354',
+  'unifunc' => 'content_634d86fc994f88_07606861',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4dffb64063bb972c37e05619a2ccd9d0ea7473ac' => 
     array (
       0 => 'app:frontendcomponentsfooter.',
-      1 => 1665768395,
+      1 => 1666022512,
       2 => 'app',
     ),
   ),
@@ -20,34 +20,16 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_63499c21cb1c65_84408354 (Smarty_Internal_Template $_smarty_tpl) {
+function content_634d86fc994f88_07606861 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
-	</div><!-- pkp_structure_main -->
-
-		<?php if (empty($_smarty_tpl->tpl_vars['isFullWidth']->value)) {?>
-		<?php $_smarty_tpl->smarty->ext->_capture->open($_smarty_tpl, 'default', "sidebarCode", null);
-echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['call_hook'][0], array( array('name'=>"Templates::Common::Sidebar"),$_smarty_tpl ) );
-$_smarty_tpl->smarty->ext->_capture->close($_smarty_tpl);?>
-		<?php if ($_smarty_tpl->tpl_vars['sidebarCode']->value) {?>
-			<div class="pkp_structure_sidebar left" role="complementary" aria-label="<?php echo call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'escape' ][ 0 ], array( call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0], array( array('key'=>"common.navigation.sidebar"),$_smarty_tpl ) ) ));?>
-">
-				<?php echo $_smarty_tpl->tpl_vars['sidebarCode']->value;?>
-
-			</div><!-- pkp_sidebar.left -->
-		<?php }?>
-	<?php }?>
-</div><!-- pkp_structure_content -->
 
 
-
-
-
-<div class="container">
-	<div class="row" style="background-color: #2c2e35">
+<div class="container-fluid">
+	<div class="row" style="background-color:  ">
 		<div class="col text-center">
-			<div class="col" style="background-color: #2c2e35">
+			<div class="col" style="background-color:  ">
 				<img src="<?php echo $_smarty_tpl->tpl_vars['publicFilesDir']->value;?>
-/dark_footer.png" style="width: 150px; height: 150px; margin-top: 39px; margin-bottom: 39px;">
+/white_footer.png" style="width: 150px; height: 150px; margin-top: 39px; margin-bottom: 39px;">
 			</div>
 		</div>
 		<div class="col" style="margin-top: 45px;">

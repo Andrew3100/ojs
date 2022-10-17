@@ -1,39 +1,11 @@
-{**
- * templates/frontend/components/footer.tpl
- *
- * Copyright (c) 2014-2021 Simon Fraser University
- * Copyright (c) 2003-2021 John Willinsky
- * Distributed under the GNU GPL v3. For full terms see the file docs/COPYING.
- *
- * @brief Common site frontend footer.
- *
- * @uses $isFullWidth bool Should this page be displayed without sidebars? This
- *       represents a page-level override, and doesn't indicate whether or not
- *       sidebars have been configured for thesite.
- *}
-
-	</div><!-- pkp_structure_main -->
-
-	{* Sidebars *}
-	{if empty($isFullWidth)}
-		{capture assign="sidebarCode"}{call_hook name="Templates::Common::Sidebar"}{/capture}
-		{if $sidebarCode}
-			<div class="pkp_structure_sidebar left" role="complementary" aria-label="{translate|escape key="common.navigation.sidebar"}">
-				{$sidebarCode}
-			</div><!-- pkp_sidebar.left -->
-		{/if}
-	{/if}
-</div><!-- pkp_structure_content -->
 
 
 
-
-
-<div class="container">
-	<div class="row" style="background-color: #2c2e35">
+<div class="container-fluid">
+	<div class="row" style="background-color:  ">
 		<div class="col text-center">
-			<div class="col" style="background-color: #2c2e35">
-				<img src="{$publicFilesDir}/dark_footer.png" style="width: 150px; height: 150px; margin-top: 39px; margin-bottom: 39px;">
+			<div class="col" style="background-color:  ">
+				<img src="{$publicFilesDir}/white_footer.png" style="width: 150px; height: 150px; margin-top: 39px; margin-bottom: 39px;">
 			</div>
 		</div>
 		<div class="col" style="margin-top: 45px;">

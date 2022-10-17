@@ -31,113 +31,90 @@
 
 <body class="pkp_page_{$requestedPage|escape|default:"index"} pkp_op_{$requestedOp|escape|default:"index"}{if $showingLogo} has_site_logo{/if}" dir="{$currentLocaleLangDir|escape|default:"ltr"}">
 
-<div class="container">
 
-
-	{**  Л О Г О Т И П    **}
-
-	<div class="row">
-		<div class="col" style="background-color: #2c2e35">
-			<img src="{$publicFilesDir}/dark_header.png" style="width: 530px; height: 110px; margin-top: 39px; margin-bottom: 39px;">
+<div class="container-fluid">
+	<div class="row" style="background-color: ">
+		<div class="col-3" style="background-color: ;">
+			<img src="{$publicFilesDir}/white_header.png" style="width: 180%; height: 100%; margin-top: 5px; margin-bottom: 5px;">
 		</div>
+		<div class="col-3 text-center" style="margin-top: 26px;"><span>Международный рецензируемый научный онлайн-журнал открытого доступа</span></div>
+
+{*		<div class="col-1" style="background-color: ; margin-top: 30px; text-align: center;"><a href="#" style="text-decoration: none; color: black;">{translate key = "navigation.main"}</a></div>*}
+{*		<div class="col-1" style="background-color: ; margin-top: 30px; text-align: center;"><a href="#" style="text-decoration: none; color: black;">{translate key = "navigation.main"}</a></div>*}
+		<div class="col-1" style="background-color: ; margin-top: 30px; text-align: center;"><a href="#" style="text-decoration: none; color: black;">{translate key = "navigation.main"}</a></div>
+		{*		<div class="col-1" style="background-color: ; margin-top: 15px; text-align: center;"><a href="/index.php/sr/issue/current" style="text-decoration: none; color: black;">{translate key = "navigation.current"}</a></div>*}
+		<div class="col-1" style="background-color: ; margin-top: 30px; text-align: center;"><a href="/index.php/sr/authors" style="text-decoration: none; color: black;">{translate key = "navigation.for_authors"}</a></div>
+		<div class="col-1" style="background-color: ; margin-top: 30px; text-align: center;"><a href="/index.php/sr/issue/archive" style="text-decoration: none; color: black;">{translate key = "navigation.archive"}</a></div>
+		{*		<div class="col-1" style="background-color: ; margin-top: 15px; text-align: center;"><a href="#" style="text-decoration: none; color: black;">{translate key = "navigation.redaction"}</a></div>*}
+		<div class="col-1" style="background-color: ; margin-top: 30px; text-align: center;"><a href="#" style="text-decoration: none; color: black;">{translate key = "navigation.contacts"}</a></div>
+		<div class="col-2"><img src="{$publicFilesDir}/bsu.png" style="width: 90%; height: 60%; margin-top: 20px; margin-bottom: 20px;"></div>
 	</div>
-
-
-	{**   Н А В И Г А Ц И Я    **}
-
-	<div class="row" style="background-color: #2c2e35;">
-		<div class="col" style="margin-bottom: 15px; text-align: center"><a href="#" style="text-decoration: none; color: white;">{translate key = "navigation.main"}</a></div>
-		<div class="col" style="margin-bottom: 15px; text-align: center"><a href="/index.php/sr/issue/current" style="text-decoration: none; color: white;">{translate key = "navigation.current"}</a></div>
-		<div class="col" style="margin-bottom: 15px; text-align: center"><a href="/index.php/sr/authors" style="text-decoration: none; color: white;">{translate key = "navigation.for_authors"}</a></div>
-		<div class="col" style="margin-bottom: 15px; text-align: center"><a href="/index.php/sr/issue/archive" style="text-decoration: none; color: white;">{translate key = "navigation.archive"}</a></div>
-		<div class="col" style="margin-bottom: 15px; text-align: center"><a href="#" style="text-decoration: none; color: white;">{translate key = "navigation.redaction"}</a></div>
-		<div class="col" style="margin-bottom: 15px; text-align: center"><a href="#" style="text-decoration: none; color: white;">{translate key = "navigation.contacts"}</a></div>
-	</div>
-
-
-
 </div>
-
-<div class="container">
+<div class="container-fluid">
 	<div class="row">
 		<div class="col">
-			{*
+
+
+			<div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+				<div class="carousel-indicators">
+					<button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 0"></button>
+					<button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 1"></button>
+					<button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 2"></button>
+					<button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 3"></button>
+				</div>
+				<div class="carousel-inner">
+					<div class="carousel-item active" data-bs-interval="10000">
+						<img src="{$publicFilesDir}/borodino.png" style="height: 600px; width: 750px;" class="d-block w-100" alt="...">
+						<div class="carousel-caption d-none d-md-block">
+							<a class="btn btn-success">Выпуск №1</a>
+							<br>
+							<h3 style="color: white">Бородинская битва</h3>
+							<h5 style="color: white">Январь - Март, 2023</h5>
+						</div>
+					</div>
+					<div class="carousel-item" data-bs-interval="2000">
+						<img src="{$publicFilesDir}/stalingrad.png" style="height: 600px; width: 750px;" class="d-block w-100" alt="...">
+						<div class="carousel-caption d-none d-md-block">
+							<a class="btn btn-success">Выпуск №2</a>
+							<br>
+							<h3 style="color: white">Сталинградская битва</h3>
+							<h5 style="color: white">Апрель - Июнь, 2023</h5>
+						</div>
+					</div>
+					<div class="carousel-item">
+						<img src="{$publicFilesDir}/cusima.png" style="height: 600px; width: 750px;" class="d-block w-100" alt="...">
+						<div class="carousel-caption d-none d-md-block">
+							<a class="btn btn-success">Выпуск №3</a>
+							<br>
+							<h3 style="color: white">Цусимская битва</h3>
+							<h5 style="color: white">Июль - Сентябрь, 2023</h5>
+						</div>
+					</div>
+					<div class="carousel-item">
+						<img src="{$publicFilesDir}/spain.png" style="height: 600px; width: 750px;" class="d-block w-100" alt="...">
+						<div class="carousel-caption d-none d-md-block">
+							<a class="btn btn-success">Выпуск №4</a>
+							<br>
+							<h3 style="color: white">Испанская армада</h3>
+							<h5 style="color: white">Октябрь - Ноябрь, 2023</h5>
+						</div>
+					</div>
+
+				</div>
+				<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"  data-bs-slide="prev">
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Предыдущий</span>
+				</button>
+				<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark"  data-bs-slide="next">
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Следующий</span>
+				</button>
+			</div>
+
+
+
+
+
 		</div>
 	</div>
-</div>*}
-
-{*	<div class="pkp_structure_page">*}
-
-{*		 Header*}
-{*		<header class="pkp_structure_head" id="headerNavigationContainer" role="banner">*}
-{*			 Skip to content nav links*}
-{*			{include file="frontend/components/skipLinks.tpl"}*}
-
-{*			<div class="pkp_head_wrapper">*}
-
-{*				<div class="pkp_site_name_wrapper">*}
-{*					<button class="pkp_site_nav_toggle">*}
-{*						<span>Open Menu</span>*}
-{*					</button>*}
-{*					{if !$requestedPage || $requestedPage === 'index'}*}
-{*						<h1 class="pkp_screen_reader">*}
-{*							{if $currentContext}*}
-{*								{$displayPageHeaderTitle|escape}*}
-{*							{else}*}
-{*								{$siteTitle|escape}*}
-{*							{/if}*}
-{*						</h1>*}
-{*					{/if}*}
-{*					<div class="pkp_site_name">*}
-{*					{capture assign="homeUrl"}*}
-{*						{url page="index" router=$smarty.const.ROUTE_PAGE}*}
-{*					{/capture}*}
-{*					{if $displayPageHeaderLogo}*}
-{*						<a href="{$homeUrl}" class="is_img">*}
-{*							<img src="{$publicFilesDir}/{$displayPageHeaderLogo.uploadName|escape:"url"}" width="{$displayPageHeaderLogo.width|escape}" height="{$displayPageHeaderLogo.height|escape}" {if $displayPageHeaderLogo.altText != ''}alt="{$displayPageHeaderLogo.altText|escape}"{/if} />*}
-{*						</a>*}
-{*					{elseif $displayPageHeaderTitle}*}
-{*						<a href="{$homeUrl}" class="is_text">{$displayPageHeaderTitle|escape}</a>*}
-{*					{else}*}
-{*						<a href="{$homeUrl}" class="is_img">*}
-{*							<img src="{$baseUrl}/templates/images/structure/logo.png" alt="{$applicationName|escape}" title="{$applicationName|escape}" width="180" height="90" />*}
-{*						</a>*}
-{*					{/if}*}
-{*					</div>*}
-{*				</div>*}
-{*				{capture assign="primaryMenu"}*}
-{*					{load_menu name="primary" id="navigationPrimary" ulClass="pkp_navigation_primary"}*}
-{*				{/capture}*}
-
-{*				<nav class="pkp_site_nav_menu" aria-label="{translate|escape key="common.navigation.site"}">*}
-{*					<a id="siteNav"></a>*}
-{*					<div class="pkp_navigation_primary_row">*}
-{*						<div class="pkp_navigation_primary_wrapper">*}
-{*							 Primary navigation menu for current application*}
-{*							{$primaryMenu}*}
-
-{*							 Search form*}
-{*							{if $currentContext && $requestedPage !== 'search'}*}
-{*								<div class="pkp_navigation_search_wrapper">*}
-{*									<a href="{url page="search"}" class="pkp_search pkp_search_desktop">*}
-{*										<span class="fa fa-search" aria-hidden="true"></span>*}
-{*										{translate key="common.search"}*}
-{*									</a>*}
-{*								</div>*}
-{*							{/if}*}
-{*						</div>*}
-{*					</div>*}
-{*					<div class="pkp_navigation_user_wrapper" id="navigationUserWrapper">*}
-{*						{load_menu name="user" id="navigationUser" ulClass="pkp_navigation_user" liClass="profile"}*}
-{*					</div>*}
-{*				</nav>*}
-{*			</div><!-- .pkp_head_wrapper -->*}
-{*		</header><!-- .pkp_structure_head -->*}
-
-{*		 Wrapper for page content and sidebars*}
-{*		{if $isFullWidth}*}
-{*			{assign var=hasSidebar value=0}*}
-{*		{/if}*}
-{*		<div class="pkp_structure_content{if $hasSidebar} has_sidebar{/if}">*}
-{*			<div class="pkp_structure_main" role="main">*}
-{*				<a id="pkp_content_main"></a>*}
+</div>
