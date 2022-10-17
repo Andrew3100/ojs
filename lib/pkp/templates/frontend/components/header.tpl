@@ -32,12 +32,12 @@
 <body class="pkp_page_{$requestedPage|escape|default:"index"} pkp_op_{$requestedOp|escape|default:"index"}{if $showingLogo} has_site_logo{/if}" dir="{$currentLocaleLangDir|escape|default:"ltr"}">
 
 
-<div class="container-fluid">
+<div class="container-fluid" style="display: ">
 	<div class="row" style="background-color: ">
-		<div class="col-3" style="background-color: ;">
+		<div class="col-3" style="margin-left: 10px; margin-top: 10px; margin-bottom: 10px;">
 			<img src="{$publicFilesDir}/white_header.png" style="width: 180%; height: 100%; margin-top: 5px; margin-bottom: 5px;">
 		</div>
-		<div class="col-3 text-center" style="margin-top: 26px;"><span>Международный рецензируемый научный онлайн-журнал открытого доступа</span></div>
+		<div class="col-2 text-left" style="margin-top: 26px;"><p style="max-width: 200px; margin-left: 40px;"><b>Международный рецензируемый научный онлайн-журнал открытого доступа</b></p></div>
 
 {*		<div class="col-1" style="background-color: ; margin-top: 30px; text-align: center;"><a href="#" style="text-decoration: none; color: black;">{translate key = "navigation.main"}</a></div>*}
 {*		<div class="col-1" style="background-color: ; margin-top: 30px; text-align: center;"><a href="#" style="text-decoration: none; color: black;">{translate key = "navigation.main"}</a></div>*}
@@ -47,10 +47,11 @@
 		<div class="col-1" style="background-color: ; margin-top: 30px; text-align: center;"><a href="/index.php/sr/issue/archive" style="text-decoration: none; color: black;">{translate key = "navigation.archive"}</a></div>
 		{*		<div class="col-1" style="background-color: ; margin-top: 15px; text-align: center;"><a href="#" style="text-decoration: none; color: black;">{translate key = "navigation.redaction"}</a></div>*}
 		<div class="col-1" style="background-color: ; margin-top: 30px; text-align: center;"><a href="#" style="text-decoration: none; color: black;">{translate key = "navigation.contacts"}</a></div>
-		<div class="col-2"><img src="{$publicFilesDir}/bsu.png" style="width: 90%; height: 60%; margin-top: 20px; margin-bottom: 20px;"></div>
+		<div class="col-2"><img  src="{$publicFilesDir}/bsu.png" style="width: 90%; height: 60%; margin-top: 10px; margin-bottom: 10px; margin-left: 120px;"></div>
 	</div>
 </div>
-<div class="container-fluid">
+<br>
+<div class="container">
 	<div class="row">
 		<div class="col">
 

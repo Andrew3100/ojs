@@ -12,21 +12,8 @@
   'common.homePageHeader.altText' => 'Заголовок главной страницы',
   'common.journalHomepageImage.altText' => 'Изображение главной страницы журнала',
   'navigation.journalHelp' => 'Помощь',
-
-  /* By Funikov 2022 */
-    'navigation.main' => '<b>Главная</b>',
-    'navigation.current' => '<b>Текущий выпуск</b>',
-    'navigation.for_authors' => '<b>Авторам</b>',
-    'navigation.archive' => '<b>Архив выпусков</b>',
-    'navigation.redaction' => '<b>Редакция</b>',
-    'navigation.contacts' => '<b>Контакты</b>',
-    'navigation.footer1' => '<b>Строка для футера</b>',
-    'navigation.footer2' => '<b>Строка для футера</b>',
-    'navigation.footer3' => '<b>Строка для футера</b>',
-    /* By Funikov 2022 */
-
-
-    'navigation.otherJournals' => 'Другие журналы',
+  'navigation.current' => 'Текущий выпуск',
+  'navigation.otherJournals' => 'Другие журналы',
   'navigation.browseByIssue' => 'По выпускам',
   'navigation.browseByAuthor' => 'По авторам',
   'navigation.infoForAuthors' => 'Для авторов',
@@ -129,7 +116,7 @@
   'submissions.layoutComplete' => 'Прошел верстку',
   'submissions.proofreadingComplete' => 'Прошел корректуру',
   'submission.search' => 'Поиск по статьям',
-  'journal.currentIssue' => 'Текущий выпуск1',
+  'journal.currentIssue' => 'Текущий выпуск',
   'context.contexts' => 'Журналы',
   'journal.path' => 'Путь',
   'context.context' => 'Журнал',

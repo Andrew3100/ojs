@@ -1,5 +1,7 @@
 <?php
 
+
+
 /**
  * @mainpage OJS API Reference
  *
@@ -59,10 +61,19 @@
  * Bootstrap code for OJS site. Loads required files and then calls the
  * dispatcher to delegate to the appropriate request handler.
  */
+
 // Initialize global environment
 define('INDEX_FILE_LOCATION', __FILE__);
 //define("database", DB);
 $application = require('./lib/pkp/includes/bootstrap.inc.php');
 // Serve the request
+
+ini_set('error_reporting', E_ALL);
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+
+
 $application->execute();
+//exit('123');
 import(".DB");
+

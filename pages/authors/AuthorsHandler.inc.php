@@ -32,7 +32,6 @@ class AuthorsHandler extends AuthorsContextHandler {
             $rules_id[] = $rule_accordion->id;
         }
 
-//        var_dump($rules_id);
         $templateMgr->assign(array(
             'rules_header' => $rules_header,
             'rules_body' => $rules_body,
