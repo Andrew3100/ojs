@@ -134,7 +134,7 @@ sitewide_privacy_statement = Off
 driver = mysql
 host = localhost
 username = root
-password = root
+password =
 name = ojs
 
 ; Set the non-standard port and/or socket, if used

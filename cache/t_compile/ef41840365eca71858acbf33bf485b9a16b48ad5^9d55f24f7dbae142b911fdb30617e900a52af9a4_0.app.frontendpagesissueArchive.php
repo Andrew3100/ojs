@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2022-10-17 23:07:35
+/* Smarty version 3.1.39, created on 2022-10-19 12:08:11
   from 'app:frontendpagesissueArchive' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_634db6071fd443_40393561',
+  'unifunc' => 'content_634fbe7b887166_11104971',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '9d55f24f7dbae142b911fdb30617e900a52af9a4' => 
     array (
       0 => 'app:frontendpagesissueArchive',
-      1 => 1665931245,
+      1 => 1666166386,
       2 => 'app',
     ),
   ),
@@ -25,7 +25,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'app:frontend/components/footer.tpl' => 1,
   ),
 ),false)) {
-function content_634db6071fd443_40393561 (Smarty_Internal_Template $_smarty_tpl) {
+function content_634fbe7b887166_11104971 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->smarty->ext->_capture->open($_smarty_tpl, 'default', "pageTitle", null);?>
 	<?php if ($_smarty_tpl->tpl_vars['prevPage']->value) {?>
 		<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0], array( array('key'=>"archive.archivesPageNumber",'pageNumber'=>$_smarty_tpl->tpl_vars['prevPage']->value+1),$_smarty_tpl ) );?>

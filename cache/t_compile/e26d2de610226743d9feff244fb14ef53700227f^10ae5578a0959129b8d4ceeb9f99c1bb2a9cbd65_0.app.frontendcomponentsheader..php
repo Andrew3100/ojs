@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2022-10-17 19:48:28
+/* Smarty version 3.1.39, created on 2022-10-19 12:08:18
   from 'app:frontendcomponentsheader.' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_634d875cad9d18_18512248',
+  'unifunc' => 'content_634fbe82180294_48981804',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '10ae5578a0959129b8d4ceeb9f99c1bb2a9cbd65' => 
     array (
       0 => 'app:frontendcomponentsheader.',
-      1 => 1666025308,
+      1 => 1666165588,
       2 => 'app',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'app:frontend/components/headerHead.tpl' => 1,
   ),
 ),false)) {
-function content_634d875cad9d18_18512248 (Smarty_Internal_Template $_smarty_tpl) {
+function content_634fbe82180294_48981804 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\OSPanel\\domains\\ojs\\lib\\pkp\\lib\\vendor\\smarty\\smarty\\libs\\plugins\\modifier.replace.php','function'=>'smarty_modifier_replace',),));
 $_smarty_tpl->_assignInScope('showingLogo', true);
 if (!$_smarty_tpl->tpl_vars['displayPageHeaderLogo']->value) {
@@ -54,62 +54,98 @@ if ($_smarty_tpl->tpl_vars['showingLogo']->value) {?> has_site_logo<?php }?>" di
 
 
 <div class="container-fluid">
-	<div class="row" style="background-color: ">
-		<div class="col-3" style="background-color: ;">
+	<header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+		<div class="col-3">
 			<img src="<?php echo $_smarty_tpl->tpl_vars['publicFilesDir']->value;?>
-/white_header.png" style="width: 180%; height: 100%; margin-top: 5px; margin-bottom: 5px;">
+/white_header.png" style="">
 		</div>
-		<div class="col-3 text-center" style="margin-top: 26px;"><span>Международный рецензируемый научный онлайн-журнал открытого доступа</span></div>
-
+		<div class="col-2">
+			<p style="max-width: 200px; margin-left: 40px;"><b>Международный рецензируемый научный онлайн-журнал открытого доступа</b></p>
+		</div>
 		<div class="col-1" style="background-color: ; margin-top: 30px; text-align: center;"><a href="#" style="text-decoration: none; color: black;"><?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0], array( array('key'=>"navigation.main"),$_smarty_tpl ) );?>
 </a></div>
-				<div class="col-1" style="background-color: ; margin-top: 30px; text-align: center;"><a href="/index.php/sr/authors" style="text-decoration: none; color: black;"><?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0], array( array('key'=>"navigation.for_authors"),$_smarty_tpl ) );?>
+		<div class="col-1" style="background-color: ; margin-top: 30px; text-align: center;"><a href="/index.php/sr/authors" style="text-decoration: none; color: black;"><?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0], array( array('key'=>"navigation.for_authors"),$_smarty_tpl ) );?>
 </a></div>
 		<div class="col-1" style="background-color: ; margin-top: 30px; text-align: center;"><a href="/index.php/sr/issue/archive" style="text-decoration: none; color: black;"><?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0], array( array('key'=>"navigation.archive"),$_smarty_tpl ) );?>
 </a></div>
-				<div class="col-1" style="background-color: ; margin-top: 30px; text-align: center;"><a href="#" style="text-decoration: none; color: black;"><?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0], array( array('key'=>"navigation.contacts"),$_smarty_tpl ) );?>
+		<div class="col-1" style="background-color: ; margin-top: 30px; text-align: center;"><a href="#" style="text-decoration: none; color: black;"><?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0], array( array('key'=>"navigation.contacts"),$_smarty_tpl ) );?>
 </a></div>
-		<div class="col-2"><img src="<?php echo $_smarty_tpl->tpl_vars['publicFilesDir']->value;?>
-/bsu.png" style="width: 90%; height: 60%; margin-top: 20px; margin-bottom: 20px;"></div>
-	</div>
+		<div class="col-3"><p class="text-center"><img  src="<?php echo $_smarty_tpl->tpl_vars['publicFilesDir']->value;?>
+/bsu.png" style=""></p></div>
+	</header>
 </div>
-<div class="container-fluid">
+
+
+<br>
+<div class="container">
 	<div class="row">
 		<div class="col">
-			<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+
+
+			<div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
 				<div class="carousel-indicators">
-					<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-					<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-					<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-					<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 4"></button>
+					<button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 0"></button>
+					<button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 1"></button>
+					<button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 2"></button>
+					<button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 3"></button>
 				</div>
 				<div class="carousel-inner">
-					<div class="carousel-item active">
+					<div class="carousel-item active" data-bs-interval="10000">
 						<img src="<?php echo $_smarty_tpl->tpl_vars['publicFilesDir']->value;?>
 /borodino.png" style="height: 600px; width: 750px;" class="d-block w-100" alt="...">
+						<div class="carousel-caption d-none d-md-block">
+							<a class="btn btn-success">Выпуск №1</a>
+							<br>
+							<h3 style="color: white">Бородинская битва</h3>
+							<h5 style="color: white">Январь - Март, 2023</h5>
+						</div>
 					</div>
-					<div class="carousel-item">
+					<div class="carousel-item" data-bs-interval="2000">
 						<img src="<?php echo $_smarty_tpl->tpl_vars['publicFilesDir']->value;?>
 /stalingrad.png" style="height: 600px; width: 750px;" class="d-block w-100" alt="...">
+						<div class="carousel-caption d-none d-md-block">
+							<a class="btn btn-success">Выпуск №2</a>
+							<br>
+							<h3 style="color: white">Сталинградская битва</h3>
+							<h5 style="color: white">Апрель - Июнь, 2023</h5>
+						</div>
 					</div>
 					<div class="carousel-item">
 						<img src="<?php echo $_smarty_tpl->tpl_vars['publicFilesDir']->value;?>
 /cusima.png" style="height: 600px; width: 750px;" class="d-block w-100" alt="...">
+						<div class="carousel-caption d-none d-md-block">
+							<a class="btn btn-success">Выпуск №3</a>
+							<br>
+							<h3 style="color: white">Цусимская битва</h3>
+							<h5 style="color: white">Июль - Сентябрь, 2023</h5>
+						</div>
 					</div>
 					<div class="carousel-item">
 						<img src="<?php echo $_smarty_tpl->tpl_vars['publicFilesDir']->value;?>
-/cusima.png" style="height: 600px; width: 750px;" class="d-block w-100" alt="...">
+/spain.png" style="height: 600px; width: 750px;" class="d-block w-100" alt="...">
+						<div class="carousel-caption d-none d-md-block">
+							<a class="btn btn-success">Выпуск №4</a>
+							<br>
+							<h3 style="color: white">Испанская армада</h3>
+							<h5 style="color: white">Октябрь - Ноябрь, 2023</h5>
+						</div>
 					</div>
+
 				</div>
-				<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+				<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"  data-bs-slide="prev">
 					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
 					<span class="visually-hidden">Предыдущий</span>
 				</button>
-				<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+				<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark"  data-bs-slide="next">
 					<span class="carousel-control-next-icon" aria-hidden="true"></span>
 					<span class="visually-hidden">Следующий</span>
 				</button>
 			</div>
+
+
+
+
+
 		</div>
 	</div>
 </div>

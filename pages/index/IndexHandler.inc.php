@@ -14,6 +14,7 @@
  */
 
 import('lib.pkp.pages.index.PKPIndexHandler');
+import('DB');
 
 class IndexHandler extends PKPIndexHandler {
 	//
@@ -46,12 +47,29 @@ class IndexHandler extends PKPIndexHandler {
 		$router = $request->getRouter();
 		$templateMgr = TemplateManager::getManager($request);
 		if ($journal) {
+
+
+
+            // берём информацию для вывода карточек
+            $DB = new DB;
+            $cards = $DB->get_records_sql("SELECT * FROM cards_main_page");
+//            var_dump($cards);
+            foreach ($cards as $card) {
+                $cards_id[] = $card->id;
+                $sv = 'author_name_'.$DB->get_current_journal_language();
+                $cards_author[] = $card->{$sv};
+                $sv = 'header_'.$DB->get_current_journal_language();
+                $cards_header[] = $card->{$sv};
+                $sv = 'text_'.$DB->get_current_journal_language();
+                $cards_text[] = $card->{$sv};
+            }
+
 			// Assign header and content for home page
 			$templateMgr->assign(array(
-				'additionalHomeContent' => $journal->getLocalizedData('additionalHomeContent'),
-				'homepageImage' => $journal->getLocalizedData('homepageImage'),
-				'homepageImageAltText' => $journal->getLocalizedData('homepageImageAltText'),
-				'journalDescription' => $journal->getLocalizedData('description'),
+				'ids' => $cards_id,
+				'authors' => $cards_author,
+				'headers' => $cards_header,
+				'texts' => $cards_text,
 			));
 
 			$issueDao = DAORegistry::getDAO('IssueDAO'); /* @var $issueDao IssueDAO */

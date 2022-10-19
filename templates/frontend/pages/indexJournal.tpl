@@ -16,81 +16,28 @@
  *       homepage
  * @uses $issue Issue Current issue
  *}
-{include file="frontend/components/header.tpl" pageTitleTranslated=$currentJournal->getLocalizedName()}
+{include file="frontend/components/header.tpl"}
 
-{*<div class="page_index_journal">*}
+<br xmlns="http://www.w3.org/1999/html">
+<div class="container">
+    <div class="row">
 
-{*	{call_hook name="Templates::Index::journal"}*}
+        {$i = 0}
+        {foreach from=$ids item="idss"}
+        <div class="col mce-text-center">
+            <div class="card-center" style="width: 18rem;">
+                <img src="{$publicFilesDir}/main_page_cards/1.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{$headers[$i]}</h5>
+                    <p style="color: #6f7176"><b>{$authors[$i]}</b></p>
+                    <p class="card-text">{$texts[$i]}</p>
+                </div>
+                </div>
+        </div><br>
+        {$i = $i + 1}
+        {/foreach}
 
-{*	{if !$activeTheme->getOption('useHomepageImageAsHeader') && $homepageImage}*}
-{*		<div class="homepage_image">*}
-{*			<img src="{$publicFilesDir}/{$homepageImage.uploadName|escape:"url"}"{if $homepageImage.altText} alt="{$homepageImage.altText|escape}"{/if}>*}
-{*		</div>*}
-{*	{/if}*}
+    </div>
+</div>
 
-{*	 Journal Description*}
-{*	{if $activeTheme->getOption('showDescriptionInJournalIndex')}*}
-{*		<section class="homepage_about">*}
-{*			<a id="homepageAbout"></a>*}
-{*			<h2>{translate key="about.aboutContext"}</h2>*}
-{*			{$currentContext->getLocalizedData('description')}*}
-{*		</section>*}
-{*	{/if}*}
-
-{*	 Announcements*}
-{*	{if $numAnnouncementsHomepage && $announcements|@count}*}
-{*		<section class="cmp_announcements highlight_first">*}
-{*			<a id="homepageAnnouncements"></a>*}
-{*			<h2>*}
-{*				{translate key="announcement.announcements"}*}
-{*			</h2>*}
-{*			{foreach name=announcements from=$announcements item=announcement}*}
-{*				{if $smarty.foreach.announcements.iteration > $numAnnouncementsHomepage}*}
-{*					{break}*}
-{*				{/if}*}
-{*				{if $smarty.foreach.announcements.iteration == 1}*}
-{*					{include file="frontend/objects/announcement_summary.tpl" heading="h3"}*}
-{*					<div class="more">*}
-{*				{else}*}
-{*					<article class="obj_announcement_summary">*}
-{*						<h4>*}
-{*							<a href="{url router=$smarty.const.ROUTE_PAGE page="announcement" op="view" path=$announcement->getId()}">*}
-{*								{$announcement->getLocalizedTitle()|escape}*}
-{*							</a>*}
-{*						</h4>*}
-{*						<div class="date">*}
-{*							{$announcement->getDatePosted()|date_format:$dateFormatShort}*}
-{*						</div>*}
-{*					</article>*}
-{*				{/if}*}
-{*			{/foreach}*}
-{*			</div><!-- .more -->*}
-{*		</section>*}
-{*	{/if}*}
-
-{*	 Latest issue*}
-{*	{if $issue}*}
-{*		<section class="current_issue">*}
-{*			<a id="homepageIssue"></a>*}
-{*			<h2>*}
-{*				{translate key="journal.currentIssue"}*}
-{*			</h2>*}
-{*			<div class="current_issue_title">*}
-{*				{$issue->getIssueIdentification()|strip_unsafe_html}*}
-{*			</div>*}
-{*			{include file="frontend/objects/issue_toc.tpl" heading="h3"}*}
-{*			<a href="{url router=$smarty.const.ROUTE_PAGE page="issue" op="archive"}" class="read_more">*}
-{*				{translate key="journal.viewAllIssues"}*}
-{*			</a>*}
-{*		</section>*}
-{*	{/if}*}
-
-{*	 Additional Homepage Content*}
-{*	{if $additionalHomeContent}*}
-{*		<div class="additional_content">*}
-{*			{$additionalHomeContent}*}
-{*		</div>*}
-{*	{/if}*}
-{*</div><!-- .page -->*}
-
-{*{include file="frontend/components/footer.tpl"}*}
+{include file="frontend/components/footer.tpl"}

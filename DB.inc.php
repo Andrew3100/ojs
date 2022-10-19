@@ -16,7 +16,7 @@ class DB {
             $this->db_production = 0;
             $this->db_host = 'localhost';
             $this->db_user = 'root';
-            $this->db_password = 'root';
+            $this->db_password = '';
             $this->db_base = 'ojs';
             $this->db_production = 0;
         }
@@ -24,7 +24,7 @@ class DB {
             $this->db_production = 1;
             $this->db_host = 'localhost';
             $this->db_user = 'root';
-            $this->db_password = 'root';
+            $this->db_password = '';
             $this->db_base = 'ojs';
             $this->db_production = 1;
         }
