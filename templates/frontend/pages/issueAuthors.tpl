@@ -9,7 +9,7 @@
         <div class="col-4 text-center">
             {* левый блок *}
             <ul class="list-group">
-                <li class="list-group-item" style="background-color:  "><span><b>Подать статью</b></span></li>
+                <li class="list-group-item" style="background-color:  "><span><a href="/index.php/sr/submission/wizard/"><b>Подать статью</b></a></span></li>
                 <li class="list-group-item" style="background-color:  "><span><b>Мои статьи</b></span></li>
                 <li class="list-group-item" style="background-color:  "><span><b>Публикационная этика</b></span></li>
                 <li class="list-group-item" style="background-color:  "><span><b>Правила подачи статей</b></span></li>

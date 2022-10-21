@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2022-10-19 15:45:09
+/* Smarty version 3.1.39, created on 2022-10-21 17:40:27
   from 'app:frontendcomponentsheader.' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_634ff155a47181_25742355',
+  'unifunc' => 'content_6352af5b478293_83216521',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '10ae5578a0959129b8d4ceeb9f99c1bb2a9cbd65' => 
     array (
       0 => 'app:frontendcomponentsheader.',
-      1 => 1666183509,
+      1 => 1666359768,
       2 => 'app',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'app:frontend/components/headerHead.tpl' => 1,
   ),
 ),false)) {
-function content_634ff155a47181_25742355 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6352af5b478293_83216521 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\OSPanel\\domains\\ojs\\lib\\pkp\\lib\\vendor\\smarty\\smarty\\libs\\plugins\\modifier.replace.php','function'=>'smarty_modifier_replace',),));
 $_smarty_tpl->_assignInScope('showingLogo', true);
 if (!$_smarty_tpl->tpl_vars['displayPageHeaderLogo']->value) {
@@ -52,7 +52,6 @@ $_smarty_tpl->_subTemplateRender("app:frontend/components/headerHead.tpl", $_sma
 if ($_smarty_tpl->tpl_vars['showingLogo']->value) {?> has_site_logo<?php }?>" dir="<?php echo (($tmp = @call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'escape' ][ 0 ], array( $_smarty_tpl->tpl_vars['currentLocaleLangDir']->value )))===null||$tmp==='' ? "ltr" : $tmp);?>
 ">
 
-
 <div class="container-fluid">
 	<header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
 		<div class="col-3">
@@ -62,11 +61,14 @@ if ($_smarty_tpl->tpl_vars['showingLogo']->value) {?> has_site_logo<?php }?>" di
 		<div class="col-2">
 			<p style="max-width: 200px; margin-left: 40px;"><b>Международный рецензируемый научный онлайн-журнал открытого доступа</b></p>
 		</div>
-		<div class="col-1" style="background-color: ; margin-top: 30px; text-align: center;"><a href="#" style="text-decoration: none; color: black;"><?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0], array( array('key'=>"navigation.main"),$_smarty_tpl ) );?>
+		<div class="col-1" style="background-color: ; margin-top: 30px; text-align: center;"><a href="/index.php/<?php echo $_smarty_tpl->tpl_vars['current_path']->value;?>
+" style="text-decoration: none; color: black;"><?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0], array( array('key'=>"navigation.main"),$_smarty_tpl ) );?>
 </a></div>
-		<div class="col-1" style="background-color: ; margin-top: 30px; text-align: center;"><a href="/index.php/sr/authors" style="text-decoration: none; color: black;"><?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0], array( array('key'=>"navigation.for_authors"),$_smarty_tpl ) );?>
+		<div class="col-1" style="background-color: ; margin-top: 30px; text-align: center;"><a href="/index.php/<?php echo $_smarty_tpl->tpl_vars['current_path']->value;?>
+/authors" style="text-decoration: none; color: black;"><?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0], array( array('key'=>"navigation.for_authors"),$_smarty_tpl ) );?>
 </a></div>
-		<div class="col-1" style="background-color: ; margin-top: 30px; text-align: center;"><a href="/index.php/sr/issue/archive" style="text-decoration: none; color: black;"><?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0], array( array('key'=>"navigation.archive"),$_smarty_tpl ) );?>
+		<div class="col-1" style="background-color: ; margin-top: 30px; text-align: center;"><a href="/index.php/<?php echo $_smarty_tpl->tpl_vars['current_path']->value;?>
+/issue/archive" style="text-decoration: none; color: black;"><?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0], array( array('key'=>"navigation.archive"),$_smarty_tpl ) );?>
 </a></div>
 		<div class="col-1" style="background-color: ; margin-top: 30px; text-align: center;"><a href="#" style="text-decoration: none; color: black;"><?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0], array( array('key'=>"navigation.contacts"),$_smarty_tpl ) );?>
 </a></div>
@@ -75,14 +77,17 @@ if ($_smarty_tpl->tpl_vars['showingLogo']->value) {?> has_site_logo<?php }?>" di
 		<div class="col-1" style="background-color: ; margin-top: 30px; text-align: center;">
 			<div class="container-fluid">
 				<div class="row">
-					<div class="col">
-						<a class="btn btn-success btn-sm">EN</a>
+					<div class="col" >
+						<a href="/index.php/<?php echo $_smarty_tpl->tpl_vars['current_path']->value;?>
+/change_lang"><img src="<?php echo $_smarty_tpl->tpl_vars['publicFilesDir']->value;?>
+/language.png"></a>
 					</div>
 					<div class="col">
-						<a class="btn btn-success btn-sm">RU</a>
+						<a href="/index.php/<?php echo $_smarty_tpl->tpl_vars['current_path']->value;?>
+/login"><img src="<?php echo $_smarty_tpl->tpl_vars['publicFilesDir']->value;?>
+/user.png"></a>
 					</div>
 				</div>
-
 			</div>
 		</div>
 	</header>
@@ -91,7 +96,7 @@ if ($_smarty_tpl->tpl_vars['showingLogo']->value) {?> has_site_logo<?php }?>" di
 <div class="container-fluid">
 	<div class="row">
 
-			<div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+			<div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel" style="height: 200px;">
 				<div class="carousel-indicators">
 					<button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 0"></button>
 					<button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 1"></button>
@@ -101,19 +106,20 @@ if ($_smarty_tpl->tpl_vars['showingLogo']->value) {?> has_site_logo<?php }?>" di
 				<div class="carousel-inner">
 					<div class="carousel-item active" data-bs-interval="10000">
 						<img src="<?php echo $_smarty_tpl->tpl_vars['publicFilesDir']->value;?>
-/borodino.png" style="height: 600px; width: 750px;" class="d-block w-100" alt="...">
+/borodino.png" style="height: 200px; width: 750px;" class="d-block w-100" alt="...">
 					</div>
 					<div class="carousel-item" data-bs-interval="2000">
 						<img src="<?php echo $_smarty_tpl->tpl_vars['publicFilesDir']->value;?>
-/stalingrad.png" style="height: 600px; width: 750px;" class="d-block w-100" alt="...">
+/stalingrad.png" style="height: 200px; width: 750px;" class="d-block w-100" alt="...">
+
 					</div>
 					<div class="carousel-item">
 						<img src="<?php echo $_smarty_tpl->tpl_vars['publicFilesDir']->value;?>
-/cusima.png" style="height: 600px; width: 750px;" class="d-block w-100" alt="...">
+/cusima.png" style="height: 200px; width: 750px;" class="d-block w-100" alt="...">
 					</div>
 					<div class="carousel-item">
 						<img src="<?php echo $_smarty_tpl->tpl_vars['publicFilesDir']->value;?>
-/spain.png" style="height: 600px; width: 750px;" class="d-block w-100" alt="...">
+/spain.png" style="height: 200px; width: 750px;" class="d-block w-100" alt="...">
 					</div>
 
 				</div>

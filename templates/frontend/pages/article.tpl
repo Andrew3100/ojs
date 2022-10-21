@@ -20,11 +20,7 @@
 {include file="frontend/components/header.tpl" pageTitleTranslated=$article->getLocalizedFullTitle()|escape}
 
 <div class="page page_article">
-	{if $section}
-		{include file="frontend/components/breadcrumbs_article.tpl" currentTitle=$section->getLocalizedTitle()}
-	{else}
-		{include file="frontend/components/breadcrumbs_article.tpl" currentTitleKey="common.publication"}
-	{/if}
+
 
 	{* Show article overview *}
 	{include file="frontend/objects/article_details.tpl"}

@@ -11,35 +11,41 @@
 {include file="frontend/components/header.tpl" pageTitle="user.login"}
 
 <div class="page page_login">
-	{include file="frontend/components/breadcrumbs.tpl" currentTitleKey="user.login"}
-	<h1>
-		{translate key="user.login"}
-	</h1>
+{*	{include file="frontend/components/breadcrumbs.tpl" currentTitleKey="user.login"}*}
 
-	{* A login message may be displayed if the user was redireceted to the
-	   login page from another request. Examples include if login is required
-	   before dowloading a file. *}
-	{if $loginMessage}
-		<p>
-			{translate key=$loginMessage}
-		</p>
-	{/if}
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<br>
+				<br>
+				<h1 style="text-align: center">
+					{translate key="user.login"}
+				</h1>
 
-	<form class="cmp_form cmp_form login" id="login" method="post" action="{$loginUrl}">
-		{csrf}
+				{* A login message may be displayed if the user was redireceted to the
+                   login page from another request. Examples include if login is required
+                   before dowloading a file. *}
+				{if $loginMessage}
+					<p>
+						{translate key=$loginMessage}
+					</p>
+				{/if}
 
-		{if $error}
-			<div class="pkp_form_error">
-				{translate key=$error reason=$reason}
-			</div>
-		{/if}
+				<form class="cmp_form cmp_form login" id="login" method="post" action="{$loginUrl}" style="display: block; width: 33%; height: auto; margin: 0 auto;">
+					{csrf}
 
-		<input type="hidden" name="source" value="{$source|escape}" />
+					{if $error}
+						<div class="pkp_form_error">
+							{translate key=$error reason=$reason}
+						</div>
+					{/if}
 
-		<fieldset class="fields">
-			<legend class="pkp_screen_reader">{translate key="user.login"}</legend>
-			<div class="username">
-				<label>
+					<input type="hidden" name="source" value="{$source|escape}" />
+
+					<fieldset class="fields">
+						<legend class="pkp_screen_reader">{translate key="user.login"}</legend>
+						<div class="username">
+							<label>
 					<span class="label">
 						{translate key="user.username"}
 						<span class="required" aria-hidden="true">*</span>
@@ -47,11 +53,11 @@
 							{translate key="common.required"}
 						</span>
 					</span>
-					<input type="text" name="username" id="username" value="{$username|escape}" maxlength="32" required aria-required="true">
-				</label>
-			</div>
-			<div class="password">
-				<label>
+								<input type="text" name="username" id="username" value="{$username|escape}" maxlength="32" class="form-control" required aria-required="true">
+							</label>
+						</div>
+						<div class="password">
+							<label>
 					<span class="label">
 						{translate key="user.password"}
 						<span class="required" aria-hidden="true">*</span>
@@ -59,34 +65,41 @@
 							{translate key="common.required"}
 						</span>
 					</span>
-					<input type="password" name="password" id="password" value="{$password|escape}" password="true" maxlength="32" required aria-required="true">
-					<a href="{url page="login" op="lostPassword"}">
-						{translate key="user.login.forgotPassword"}
-					</a>
-				</label>
-			</div>
-			<div class="remember checkbox">
-				<label>
-					<input type="checkbox" name="remember" id="remember" value="1" checked="$remember">
-					<span class="label">
+								<input type="password" name="password" id="password" value="{$password|escape}" password="true" maxlength="32" required aria-required="true">
+								<a href="{url page="login" op="lostPassword"}">
+									{translate key="user.login.forgotPassword"}
+								</a>
+							</label>
+						</div>
+						<div class="remember checkbox">
+							<label>
+								<input type="checkbox" name="remember" id="remember" value="1" checked="$remember">
+								<span class="label">
 						{translate key="user.login.rememberUsernameAndPassword"}
 					</span>
-				</label>
-			</div>
-			<div class="buttons">
-				<button class="submit" type="submit">
-					{translate key="user.login"}
-				</button>
+							</label>
+						</div>
+						<div>
+							<button type="submit" class="btn btn-success">
+								{translate key="user.login"}
+							</button>
 
-				{if !$disableUserReg}
-					{capture assign=registerUrl}{url page="user" op="register" source=$source}{/capture}
-					<a href="{$registerUrl}" class="register">
-						{translate key="user.login.registerNewAccount"}
-					</a>
-				{/if}
+							{if !$disableUserReg}
+								{capture assign=registerUrl}{url page="user" op="register" source=$source}{/capture}
+								<a href="{$registerUrl}" class="btn btn-primary">
+									{translate key="user.login.registerNewAccount"}
+								</a>
+							{/if}
+						</div>
+					</fieldset>
+				</form>
+				<br>
+				<br>
 			</div>
-		</fieldset>
-	</form>
+		</div>
+
+	</div>
+
 </div><!-- .page -->
 
 {include file="frontend/components/footer.tpl"}

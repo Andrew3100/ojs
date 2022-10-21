@@ -43,6 +43,7 @@ define('PAGE_WIDTH_WIDE', 'wide');
 define('PAGE_WIDTH_FULL', 'full');
 
 import('lib.pkp.classes.template.PKPTemplateResource');
+import('DB');
 
 class PKPTemplateManager extends Smarty {
 	/** @var array of URLs to stylesheets */
@@ -113,6 +114,9 @@ class PKPTemplateManager extends Smarty {
 		AppLocale::requireComponents(LOCALE_COMPONENT_APP_COMMON, LOCALE_COMPONENT_PKP_COMMON);
 		$currentContext = $request->getContext();
 
+        $DB = new DB;
+
+
 		$this->assign([
 			'defaultCharset' => Config::getVar('i18n', 'client_charset'),
 			'baseUrl' => $request->getBaseUrl(),
@@ -120,6 +124,7 @@ class PKPTemplateManager extends Smarty {
 			'currentLocale' => $locale,
 			'currentLocaleLangDir' => AppLocale::getLocaleDirection($locale),
 			'applicationName' => __($application->getNameKey()),
+			'current_path' => $DB->get_current_journal_path(),
 		]);
 
 		// Assign date and time format

@@ -31,7 +31,6 @@
 
 <body class="pkp_page_{$requestedPage|escape|default:"index"} pkp_op_{$requestedOp|escape|default:"index"}{if $showingLogo} has_site_logo{/if}" dir="{$currentLocaleLangDir|escape|default:"ltr"}">
 
-
 <div class="container-fluid">
 	<header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
 		<div class="col-3">
@@ -40,22 +39,21 @@
 		<div class="col-2">
 			<p style="max-width: 200px; margin-left: 40px;"><b>Международный рецензируемый научный онлайн-журнал открытого доступа</b></p>
 		</div>
-		<div class="col-1" style="background-color: ; margin-top: 30px; text-align: center;"><a href="#" style="text-decoration: none; color: black;">{translate key = "navigation.main"}</a></div>
-		<div class="col-1" style="background-color: ; margin-top: 30px; text-align: center;"><a href="/index.php/sr/authors" style="text-decoration: none; color: black;">{translate key = "navigation.for_authors"}</a></div>
-		<div class="col-1" style="background-color: ; margin-top: 30px; text-align: center;"><a href="/index.php/sr/issue/archive" style="text-decoration: none; color: black;">{translate key = "navigation.archive"}</a></div>
+		<div class="col-1" style="background-color: ; margin-top: 30px; text-align: center;"><a href="/index.php/{$current_path}" style="text-decoration: none; color: black;">{translate key = "navigation.main"}</a></div>
+		<div class="col-1" style="background-color: ; margin-top: 30px; text-align: center;"><a href="/index.php/{$current_path}/authors" style="text-decoration: none; color: black;">{translate key = "navigation.for_authors"}</a></div>
+		<div class="col-1" style="background-color: ; margin-top: 30px; text-align: center;"><a href="/index.php/{$current_path}/issue/archive" style="text-decoration: none; color: black;">{translate key = "navigation.archive"}</a></div>
 		<div class="col-1" style="background-color: ; margin-top: 30px; text-align: center;"><a href="#" style="text-decoration: none; color: black;">{translate key = "navigation.contacts"}</a></div>
 		<div class="col-2"><p class="text-center"><img  src="{$publicFilesDir}/bsu.png" style="max-width: 180px; max-height: 80px;"></p></div>
 		<div class="col-1" style="background-color: ; margin-top: 30px; text-align: center;">
 			<div class="container-fluid">
 				<div class="row">
-					<div class="col">
-						<a class="btn btn-success btn-sm">EN</a>
+					<div class="col" >
+						<a href="/index.php/{$current_path}/change_lang"><img src="{$publicFilesDir}/language.png"></a>
 					</div>
 					<div class="col">
-						<a class="btn btn-success btn-sm">RU</a>
+						<a href="/index.php/{$current_path}/login"><img src="{$publicFilesDir}/user.png"></a>
 					</div>
 				</div>
-
 			</div>
 		</div>
 	</header>
@@ -64,7 +62,7 @@
 <div class="container-fluid">
 	<div class="row">
 
-			<div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+			<div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel" style="height: 200px;">
 				<div class="carousel-indicators">
 					<button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 0"></button>
 					<button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 1"></button>
@@ -73,7 +71,7 @@
 				</div>
 				<div class="carousel-inner">
 					<div class="carousel-item active" data-bs-interval="10000">
-						<img src="{$publicFilesDir}/borodino.png" style="height: 600px; width: 750px;" class="d-block w-100" alt="...">
+						<img src="{$publicFilesDir}/borodino.png" style="height: 200px; width: 750px;" class="d-block w-100" alt="...">
 {*						<div class="carousel-caption d-none d-md-block">*}
 {*							<a class="btn btn-success">Выпуск №1</a>*}
 {*							<br>*}
@@ -82,31 +80,14 @@
 {*						</div>*}
 					</div>
 					<div class="carousel-item" data-bs-interval="2000">
-						<img src="{$publicFilesDir}/stalingrad.png" style="height: 600px; width: 750px;" class="d-block w-100" alt="...">
-{*						<div class="carousel-caption d-none d-md-block">*}
-{*							<a class="btn btn-success">Выпуск №2</a>*}
-{*							<br>*}
-{*							<h3 style="color: white">Сталинградская битва</h3>*}
-{*							<h5 style="color: white">Апрель - Июнь, 2023</h5>*}
-{*						</div>*}
+						<img src="{$publicFilesDir}/stalingrad.png" style="height: 200px; width: 750px;" class="d-block w-100" alt="...">
+
 					</div>
 					<div class="carousel-item">
-						<img src="{$publicFilesDir}/cusima.png" style="height: 600px; width: 750px;" class="d-block w-100" alt="...">
-{*						<div class="carousel-caption d-none d-md-block">*}
-{*							<a class="btn btn-success">Выпуск №3</a>*}
-{*							<br>*}
-{*							<h3 style="color: white">Цусимская битва</h3>*}
-{*							<h5 style="color: white">Июль - Сентябрь, 2023</h5>*}
-{*						</div>*}
+						<img src="{$publicFilesDir}/cusima.png" style="height: 200px; width: 750px;" class="d-block w-100" alt="...">
 					</div>
 					<div class="carousel-item">
-						<img src="{$publicFilesDir}/spain.png" style="height: 600px; width: 750px;" class="d-block w-100" alt="...">
-{*						<div class="carousel-caption d-none d-md-block">*}
-{*							<a class="btn btn-success">Выпуск №4</a>*}
-{*							<br>*}
-{*							<h3 style="color: white">Испанская армада</h3>*}
-{*							<h5 style="color: white">Октябрь - Ноябрь, 2023</h5>*}
-{*						</div>*}
+						<img src="{$publicFilesDir}/spain.png" style="height: 200px; width: 750px;" class="d-block w-100" alt="...">
 					</div>
 
 				</div>

@@ -242,5 +242,11 @@ class DB {
     }
 
 
+    function get_current_journal_path() {
+        $mysqli = $this->setConnect();
+        return $journal_path = explode('/',((!empty($_SERVER['HTTPS'])) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'])[4];
+    }
+
+
 }
 

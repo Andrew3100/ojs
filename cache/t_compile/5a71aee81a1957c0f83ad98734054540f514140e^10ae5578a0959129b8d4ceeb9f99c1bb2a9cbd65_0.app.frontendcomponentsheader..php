@@ -1,28 +1,27 @@
 <?php
-/* Smarty version 3.1.39, created on 2022-10-12 11:49:40
+/* Smarty version 3.1.39, created on 2022-10-21 15:14:28
   from 'app:frontendcomponentsheader.' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_63467fa4c99880_82616791',
+  'unifunc' => 'content_63528d240e8fe8_26767947',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '10ae5578a0959129b8d4ceeb9f99c1bb2a9cbd65' => 
     array (
       0 => 'app:frontendcomponentsheader.',
-      1 => 1664910729,
+      1 => 1666353696,
       2 => 'app',
     ),
   ),
   'includes' => 
   array (
     'app:frontend/components/headerHead.tpl' => 1,
-    'app:frontend/components/skipLinks.tpl' => 1,
   ),
 ),false)) {
-function content_63467fa4c99880_82616791 (Smarty_Internal_Template $_smarty_tpl) {
+function content_63528d240e8fe8_26767947 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\OSPanel\\domains\\ojs\\lib\\pkp\\lib\\vendor\\smarty\\smarty\\libs\\plugins\\modifier.replace.php','function'=>'smarty_modifier_replace',),));
 $_smarty_tpl->_assignInScope('showingLogo', true);
 if (!$_smarty_tpl->tpl_vars['displayPageHeaderLogo']->value) {
@@ -39,103 +38,101 @@ $_smarty_tpl->smarty->ext->_capture->close($_smarty_tpl);
 }
 $_smarty_tpl->_subTemplateRender("app:frontend/components/headerHead.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
+<!-- Обязательные метатеги -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<?php echo '<script'; ?>
+ src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"><?php echo '</script'; ?>
+>
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
 <body class="pkp_page_<?php echo (($tmp = @call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'escape' ][ 0 ], array( $_smarty_tpl->tpl_vars['requestedPage']->value )))===null||$tmp==='' ? "index" : $tmp);?>
  pkp_op_<?php echo (($tmp = @call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'escape' ][ 0 ], array( $_smarty_tpl->tpl_vars['requestedOp']->value )))===null||$tmp==='' ? "index" : $tmp);
 if ($_smarty_tpl->tpl_vars['showingLogo']->value) {?> has_site_logo<?php }?>" dir="<?php echo (($tmp = @call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'escape' ][ 0 ], array( $_smarty_tpl->tpl_vars['currentLocaleLangDir']->value )))===null||$tmp==='' ? "ltr" : $tmp);?>
 ">
 
-	<div class="pkp_structure_page">
-
-				<header class="pkp_structure_head" id="headerNavigationContainer" role="banner">
-						<?php $_smarty_tpl->_subTemplateRender("app:frontend/components/skipLinks.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
-?>
-
-			<div class="pkp_head_wrapper">
-
-				<div class="pkp_site_name_wrapper">
-					<button class="pkp_site_nav_toggle">
-						<span>Open Menu</span>
-					</button>
-					<?php if (!$_smarty_tpl->tpl_vars['requestedPage']->value || $_smarty_tpl->tpl_vars['requestedPage']->value === 'index') {?>
-						<h1 class="pkp_screen_reader">
-							<?php if ($_smarty_tpl->tpl_vars['currentContext']->value) {?>
-								<?php echo call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'escape' ][ 0 ], array( $_smarty_tpl->tpl_vars['displayPageHeaderTitle']->value ));?>
-
-							<?php } else { ?>
-								<?php echo call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'escape' ][ 0 ], array( $_smarty_tpl->tpl_vars['siteTitle']->value ));?>
-
-							<?php }?>
-						</h1>
-					<?php }?>
-					<div class="pkp_site_name">
-					<?php $_smarty_tpl->smarty->ext->_capture->open($_smarty_tpl, 'default', "homeUrl", null);?>
-						<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('page'=>"index",'router'=>(defined('ROUTE_PAGE') ? constant('ROUTE_PAGE') : null)),$_smarty_tpl ) );?>
-
-					<?php $_smarty_tpl->smarty->ext->_capture->close($_smarty_tpl);?>
-					<?php if ($_smarty_tpl->tpl_vars['displayPageHeaderLogo']->value) {?>
-						<a href="<?php echo $_smarty_tpl->tpl_vars['homeUrl']->value;?>
-" class="is_img">
-							<img src="<?php echo $_smarty_tpl->tpl_vars['publicFilesDir']->value;?>
-/<?php echo call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'escape' ][ 0 ], array( $_smarty_tpl->tpl_vars['displayPageHeaderLogo']->value['uploadName'],"url" ));?>
-" width="<?php echo call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'escape' ][ 0 ], array( $_smarty_tpl->tpl_vars['displayPageHeaderLogo']->value['width'] ));?>
-" height="<?php echo call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'escape' ][ 0 ], array( $_smarty_tpl->tpl_vars['displayPageHeaderLogo']->value['height'] ));?>
-" <?php if ($_smarty_tpl->tpl_vars['displayPageHeaderLogo']->value['altText'] != '') {?>alt="<?php echo call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'escape' ][ 0 ], array( $_smarty_tpl->tpl_vars['displayPageHeaderLogo']->value['altText'] ));?>
-"<?php }?> />
-						</a>
-					<?php } elseif ($_smarty_tpl->tpl_vars['displayPageHeaderTitle']->value) {?>
-						<a href="<?php echo $_smarty_tpl->tpl_vars['homeUrl']->value;?>
-" class="is_text"><?php echo call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'escape' ][ 0 ], array( $_smarty_tpl->tpl_vars['displayPageHeaderTitle']->value ));?>
-</a>
-					<?php } else { ?>
-						<a href="<?php echo $_smarty_tpl->tpl_vars['homeUrl']->value;?>
-" class="is_img">
-							<img src="<?php echo $_smarty_tpl->tpl_vars['baseUrl']->value;?>
-/templates/images/structure/logo.png" alt="<?php echo call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'escape' ][ 0 ], array( $_smarty_tpl->tpl_vars['applicationName']->value ));?>
-" title="<?php echo call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'escape' ][ 0 ], array( $_smarty_tpl->tpl_vars['applicationName']->value ));?>
-" width="180" height="90" />
-						</a>
-					<?php }?>
+<div class="container-fluid">
+	<header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+		<div class="col-3">
+			<img src="<?php echo $_smarty_tpl->tpl_vars['publicFilesDir']->value;?>
+/white_header.png" style="">
+		</div>
+		<div class="col-2">
+			<p style="max-width: 200px; margin-left: 40px;"><b>Международный рецензируемый научный онлайн-журнал открытого доступа</b></p>
+		</div>
+		<div class="col-1" style="background-color: ; margin-top: 30px; text-align: center;"><a href="#" style="text-decoration: none; color: black;"><?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0], array( array('key'=>"navigation.main"),$_smarty_tpl ) );?>
+</a></div>
+		<div class="col-1" style="background-color: ; margin-top: 30px; text-align: center;"><a href="/index.php/sr/authors" style="text-decoration: none; color: black;"><?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0], array( array('key'=>"navigation.for_authors"),$_smarty_tpl ) );?>
+</a></div>
+		<div class="col-1" style="background-color: ; margin-top: 30px; text-align: center;"><a href="/index.php/sr/issue/archive" style="text-decoration: none; color: black;"><?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0], array( array('key'=>"navigation.archive"),$_smarty_tpl ) );?>
+</a></div>
+		<div class="col-1" style="background-color: ; margin-top: 30px; text-align: center;"><a href="#" style="text-decoration: none; color: black;"><?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0], array( array('key'=>"navigation.contacts"),$_smarty_tpl ) );?>
+</a></div>
+		<div class="col-2"><p class="text-center"><img  src="<?php echo $_smarty_tpl->tpl_vars['publicFilesDir']->value;?>
+/bsu.png" style="max-width: 180px; max-height: 80px;"></p></div>
+		<div class="col-1" style="background-color: ; margin-top: 30px; text-align: center;">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<a class="btn btn-success btn-sm">EN</a>
+					</div>
+					<div class="col">
+						<a class="btn btn-success btn-sm">RU</a>
 					</div>
 				</div>
-
-				<?php $_smarty_tpl->smarty->ext->_capture->open($_smarty_tpl, 'default', "primaryMenu", null);?>
-					<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['load_menu'][0], array( array('name'=>"primary",'id'=>"navigationPrimary",'ulClass'=>"pkp_navigation_primary"),$_smarty_tpl ) );?>
-
-				<?php $_smarty_tpl->smarty->ext->_capture->close($_smarty_tpl);?>
-
-				<nav class="pkp_site_nav_menu" aria-label="<?php echo call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'escape' ][ 0 ], array( call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0], array( array('key'=>"common.navigation.site"),$_smarty_tpl ) ) ));?>
-">
-					<a id="siteNav"></a>
-					<div class="pkp_navigation_primary_row">
-						<div class="pkp_navigation_primary_wrapper">
-														<?php echo $_smarty_tpl->tpl_vars['primaryMenu']->value;?>
-
-
-														<?php if ($_smarty_tpl->tpl_vars['currentContext']->value && $_smarty_tpl->tpl_vars['requestedPage']->value !== 'search') {?>
-								<div class="pkp_navigation_search_wrapper">
-									<a href="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('page'=>"search"),$_smarty_tpl ) );?>
-" class="pkp_search pkp_search_desktop">
-										<span class="fa fa-search" aria-hidden="true"></span>
-										<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0], array( array('key'=>"common.search"),$_smarty_tpl ) );?>
-
-									</a>
-								</div>
-							<?php }?>
-						</div>
+				<div class="row">
+					<div class="col">
+						<a  href="/index.php/<?php echo $_smarty_tpl->tpl_vars['current_path']->value;?>
+/login">Вход в систему</a>
 					</div>
-					<div class="pkp_navigation_user_wrapper" id="navigationUserWrapper">
-						<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['load_menu'][0], array( array('name'=>"user",'id'=>"navigationUser",'ulClass'=>"pkp_navigation_user",'liClass'=>"profile"),$_smarty_tpl ) );?>
+				</div>
+			</div>
+		</div>
+	</header>
+</div>
+
+<div class="container-fluid">
+	<div class="row">
+
+			<div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel" style="height: 200px;">
+				<div class="carousel-indicators">
+					<button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 0"></button>
+					<button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 1"></button>
+					<button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 2"></button>
+					<button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 3"></button>
+				</div>
+				<div class="carousel-inner">
+					<div class="carousel-item active" data-bs-interval="10000">
+						<img src="<?php echo $_smarty_tpl->tpl_vars['publicFilesDir']->value;?>
+/borodino.png" style="height: 200px; width: 750px;" class="d-block w-100" alt="...">
+					</div>
+					<div class="carousel-item" data-bs-interval="2000">
+						<img src="<?php echo $_smarty_tpl->tpl_vars['publicFilesDir']->value;?>
+/stalingrad.png" style="height: 200px; width: 750px;" class="d-block w-100" alt="...">
 
 					</div>
-				</nav>
-			</div><!-- .pkp_head_wrapper -->
-		</header><!-- .pkp_structure_head -->
+					<div class="carousel-item">
+						<img src="<?php echo $_smarty_tpl->tpl_vars['publicFilesDir']->value;?>
+/cusima.png" style="height: 200px; width: 750px;" class="d-block w-100" alt="...">
+					</div>
+					<div class="carousel-item">
+						<img src="<?php echo $_smarty_tpl->tpl_vars['publicFilesDir']->value;?>
+/spain.png" style="height: 200px; width: 750px;" class="d-block w-100" alt="...">
+					</div>
 
-				<?php if ($_smarty_tpl->tpl_vars['isFullWidth']->value) {?>
-			<?php $_smarty_tpl->_assignInScope('hasSidebar', 0);?>
-		<?php }?>
-		<div class="pkp_structure_content<?php if ($_smarty_tpl->tpl_vars['hasSidebar']->value) {?> has_sidebar<?php }?>">
-			<div class="pkp_structure_main" role="main">
-				<a id="pkp_content_main"></a>
+				</div>
+				<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"  data-bs-slide="prev">
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Предыдущий</span>
+				</button>
+				<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark"  data-bs-slide="next">
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Следующий</span>
+				</button>
+			</div>
+
+	</div>
+</div>
 <?php }
 }
