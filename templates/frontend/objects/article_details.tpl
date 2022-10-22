@@ -68,21 +68,144 @@
  {if !$heading}
  	{assign var="heading" value="h3"}
  {/if}
+
+<br>
+<br>
+
+<div class="container">
+	<div class="row">
+		<div class="col-9">
+			<div class="row">
+				<img src="{$publicFilesDir}/img.png">
+			</div>
+			<br>
+			<br>
+			<div class="row">
+				<span style="color: #c4c4c7">
+
+					{if $publication->getData('datePublished')}
+						<div class="item published">
+					<section class="sub_item">
+						<h2 class="label">
+							{translate key="submissions.published"}
+						</h2>
+						<div class="value">
+							{* If this is the original version *}
+							{if $firstPublication->getID() === $publication->getId()}
+								<span>{$firstPublication->getData('datePublished')|date_format:$dateFormatShort}</span>
+								{* If this is an updated version *}
+							{else}
+								<span>{translate key="submission.updatedOn" datePublished=$firstPublication->getData('datePublished')|date_format:$dateFormatShort dateUpdated=$publication->getData('datePublished')|date_format:$dateFormatShort}</span>
+							{/if}
+						</div>
+					</section>
+					{if count($article->getPublishedPublications()) > 1}
+						<section class="sub_item versions">
+							<h2 class="label">
+								{translate key="submission.versions"}
+							</h2>
+							<ul class="value">
+								{foreach from=array_reverse($article->getPublishedPublications()) item=iPublication}
+									{capture assign="name"}{translate key="submission.versionIdentity" datePublished=$iPublication->getData('datePublished')|date_format:$dateFormatShort version=$iPublication->getData('version')}{/capture}
+									<li>
+										{if $iPublication->getId() === $publication->getId()}
+											{$name}
+										{elseif $iPublication->getId() === $currentPublication->getId()}
+											<a href="{url page="article" op="view" path=$article->getBestId()}">{$name}</a>
+										{else}
+											<a href="{url page="article" op="view" path=$article->getBestId()|to_array:"version":$iPublication->getId()}">{$name}</a>
+										{/if}
+									</li>
+								{/foreach}
+							</ul>
+						</section>
+					{/if}
+				</div>
+					{/if}
+
+				</span>
+			</div>
+			<br>
+			<br>
+			<div class="row">
+				<h5 style="color: #c4c4c7"><b>
+					{foreach from=$publication->getData('authors') item=author}
+						{$author->getFullName()|escape}
+					{/foreach}
+				</b></h5>
+			</div>
+			<br>
+			<br>
+			<div class="row">
+				<span style="color: black">
+
+
+					<h1 class="page_title">{$publication->getLocalizedTitle()|escape}</h1>
+
+	{if $publication->getLocalizedData('subtitle')}
+		<h2 class="subtitle">
+			{$publication->getLocalizedData('subtitle')|escape}
+		</h2>
+	{/if}
+
+
+				</span>
+			</div>
+			<br>
+			<br>
+			<div class="row">
+				<span style="color: black">
+
+					{* Аннотация *}
+					{if $publication->getLocalizedData('abstract')}
+						<section class="item abstract">
+					<h2 class="label">{translate key="article.abstract"}</h2>
+					{$publication->getLocalizedData('abstract')|strip_unsafe_html}
+				</section>
+					{/if}
+
+
+				</span>
+			</div>
+			<br>
+			<br>
+
+		</div>
+		<div class="col-3">
+			<div class="row">
+				<div class="div" style="background-color: #dbb86d">
+					<a class="title" href="{url page="issue" op="view" path=$issue->getBestIssueId()}">
+						<div style="padding-top: 12px; padding-bottom: 12px; text-align: center">Выпуск 2022</div>
+					</a>
+				</div>
+			</div>
+			<div class="row">
+
+			</div>
+			<div class="row">
+
+			</div>
+		</div>
+
+	</div>
+</div>
+
+
 <article class="obj_article_details">
 
-	{* Indicate if this is only a preview *}
+	 Indicate if this is only a preview
 	{if $publication->getData('status') !== $smarty.const.STATUS_PUBLISHED}
-	<div class="cmp_notification notice">
-		{capture assign="submissionUrl"}{url page="workflow" op="access" path=$article->getId()}{/capture}
-		{translate key="submission.viewingPreview" url=$submissionUrl}
-	</div>
-	{* Notification that this is an old version *}
+		<div class="cmp_notification notice">
+			{capture assign="submissionUrl"}{url page="workflow" op="access" path=$article->getId()}{/capture}
+			{translate key="submission.viewingPreview" url=$submissionUrl}
+		</div>
+		 Notification that this is an old version
 	{elseif $currentPublication->getId() !== $publication->getId()}
 		<div class="cmp_notification notice">
 			{capture assign="latestVersionUrl"}{url page="article" op="view" path=$article->getBestId()}{/capture}
 			{translate key="submission.outdatedVersion"
-				datePublished=$publication->getData('datePublished')|date_format:$dateFormatShort
-				urlRecentVersion=$latestVersionUrl|escape
+			datePublished=$publication->getData('datePublished')|date_format:$dateFormatShort
+			urlRecentVersion=$latestVersionUrl|escape
 			}
 		</div>
 	{/if}
@@ -104,34 +227,34 @@
 				<section class="item authors">
 					<h2 class="pkp_screen_reader">{translate key="article.authors"}</h2>
 					<ul class="authors">
-					{foreach from=$publication->getData('authors') item=author}
-						<li>
+						{foreach from=$publication->getData('authors') item=author}
+							<li>
 							<span class="name">
 								{$author->getFullName()|escape}
 							</span>
-							{if $author->getLocalizedData('affiliation')}
-								<span class="affiliation">
+								{if $author->getLocalizedData('affiliation')}
+									<span class="affiliation">
 									{$author->getLocalizedData('affiliation')|escape}
-									{if $author->getData('rorId')}
-										<a href="{$author->getData('rorId')|escape}">{$rorIdIcon}</a>
-									{/if}
+										{if $author->getData('rorId')}
+											<a href="{$author->getData('rorId')|escape}">{$rorIdIcon}</a>
+										{/if}
 								</span>
-							{/if}
-							{if $author->getData('orcid')}
-								<span class="orcid">
+								{/if}
+								{if $author->getData('orcid')}
+									<span class="orcid">
 									{$orcidIcon}
 									<a href="{$author->getData('orcid')|escape}" target="_blank">
 										{$author->getData('orcid')|escape}
 									</a>
 								</span>
-							{/if}
-						</li>
-					{/foreach}
+								{/if}
+							</li>
+						{/foreach}
 					</ul>
 				</section>
 			{/if}
 
-			{* DOI (requires plugin) *}
+			 DOI (requires plugin)
 			{foreach from=$pubIdPlugins item=pubIdPlugin}
 				{if $pubIdPlugin->getPubIdType() != 'doi'}
 					{continue}
@@ -153,22 +276,22 @@
 				{/if}
 			{/foreach}
 
-			{* Keywords *}
+			 Keywords
 			{if !empty($publication->getLocalizedData('keywords'))}
-			<section class="item keywords">
-				<h2 class="label">
-					{capture assign=translatedKeywords}{translate key="article.subject"}{/capture}
-					{translate key="semicolon" label=$translatedKeywords}
-				</h2>
-				<span class="value">
+				<section class="item keywords">
+					<h2 class="label">
+						{capture assign=translatedKeywords}{translate key="article.subject"}{/capture}
+						{translate key="semicolon" label=$translatedKeywords}
+					</h2>
+					<span class="value">
 					{foreach name="keywords" from=$publication->getLocalizedData('keywords') item="keyword"}
 						{$keyword|escape}{if !$smarty.foreach.keywords.last}{translate key="common.commaListSeparator"}{/if}
 					{/foreach}
 				</span>
-			</section>
+				</section>
 			{/if}
 
-			{* Abstract *}
+			 Abstract
 			{if $publication->getLocalizedData('abstract')}
 				<section class="item abstract">
 					<h2 class="label">{translate key="article.abstract"}</h2>
@@ -178,7 +301,7 @@
 
 			{call_hook name="Templates::Article::Main"}
 
-			{* Author biographies *}
+			 Author biographies
 			{assign var="hasBiographies" value=0}
 			{foreach from=$publication->getData('authors') item=author}
 				{if $author->getLocalizedData('biography')}
@@ -215,7 +338,7 @@
 				</section>
 			{/if}
 
-			{* References *}
+			 References
 			{if $parsedCitations || $publication->getData('citationsRaw')}
 				<section class="item references">
 					<h2 class="label">
@@ -237,15 +360,15 @@
 
 		<div class="entry_details">
 
-			{* Article/Issue cover image *}
+			 Article/Issue cover image
 			{if $publication->getLocalizedData('coverImage') || ($issue && $issue->getLocalizedCoverImage())}
 				<div class="item cover_image">
 					<div class="sub_item">
 						{if $publication->getLocalizedData('coverImage')}
 							{assign var="coverImage" value=$publication->getLocalizedData('coverImage')}
 							<img
-								src="{$publication->getLocalizedCoverImageUrl($article->getData('contextId'))|escape}"
-								alt="{$coverImage.altText|escape|default:''}"
+									src="{$publication->getLocalizedCoverImageUrl($article->getData('contextId'))|escape}"
+									alt="{$coverImage.altText|escape|default:''}"
 							>
 						{else}
 							<a href="{url page="issue" op="view" path=$issue->getBestIssueId()}">
@@ -256,7 +379,7 @@
 				</div>
 			{/if}
 
-			{* Article Galleys *}
+			 Article Galleys
 			{if $primaryGalleys}
 				<div class="item galleys">
 					<h2 class="pkp_screen_reader">
@@ -286,47 +409,9 @@
 				</div>
 			{/if}
 
-			{if $publication->getData('datePublished')}
-			<div class="item published">
-				<section class="sub_item">
-					<h2 class="label">
-						{translate key="submissions.published"}
-					</h2>
-					<div class="value">
-						{* If this is the original version *}
-						{if $firstPublication->getID() === $publication->getId()}
-							<span>{$firstPublication->getData('datePublished')|date_format:$dateFormatShort}</span>
-						{* If this is an updated version *}
-						{else}
-							<span>{translate key="submission.updatedOn" datePublished=$firstPublication->getData('datePublished')|date_format:$dateFormatShort dateUpdated=$publication->getData('datePublished')|date_format:$dateFormatShort}</span>
-						{/if}
-					</div>
-				</section>
-				{if count($article->getPublishedPublications()) > 1}
-					<section class="sub_item versions">
-						<h2 class="label">
-							{translate key="submission.versions"}
-						</h2>
-						<ul class="value">
-							{foreach from=array_reverse($article->getPublishedPublications()) item=iPublication}
-								{capture assign="name"}{translate key="submission.versionIdentity" datePublished=$iPublication->getData('datePublished')|date_format:$dateFormatShort version=$iPublication->getData('version')}{/capture}
-								<li>
-									{if $iPublication->getId() === $publication->getId()}
-										{$name}
-									{elseif $iPublication->getId() === $currentPublication->getId()}
-										<a href="{url page="article" op="view" path=$article->getBestId()}">{$name}</a>
-									{else}
-										<a href="{url page="article" op="view" path=$article->getBestId()|to_array:"version":$iPublication->getId()}">{$name}</a>
-									{/if}
-								</li>
-							{/foreach}
-						</ul>
-					</section>
-				{/if}
-			</div>
-			{/if}
 
-			{* How to cite *}
+
+			 How to cite
 			{if $citation}
 				<div class="item citation">
 					<section class="sub_item citation_display">
@@ -346,10 +431,10 @@
 										{foreach from=$citationStyles item="citationStyle"}
 											<li>
 												<a
-													aria-controls="citationOutput"
-													href="{url page="citationstylelanguage" op="get" path=$citationStyle.id params=$citationArgs}"
-													data-load-citation
-													data-json-href="{url page="citationstylelanguage" op="get" path=$citationStyle.id params=$citationArgsJson}"
+														aria-controls="citationOutput"
+														href="{url page="citationstylelanguage" op="get" path=$citationStyle.id params=$citationArgs}"
+														data-load-citation
+														data-json-href="{url page="citationstylelanguage" op="get" path=$citationStyle.id params=$citationArgsJson}"
 												>
 													{$citationStyle.title|escape}
 												</a>
@@ -378,7 +463,7 @@
 				</div>
 			{/if}
 
-			{* Issue article appears in *}
+			 Issue article appears in
 			{if $issue || $section || $categories}
 				<div class="item issue">
 
@@ -423,7 +508,7 @@
 				</div>
 			{/if}
 
-			{* PubIds (requires plugins) *}
+			 PubIds (requires plugins)
 			{foreach from=$pubIdPlugins item=pubIdPlugin}
 				{if $pubIdPlugin->getPubIdType() == 'doi'}
 					{continue}
@@ -447,7 +532,7 @@
 				{/if}
 			{/foreach}
 
-			{* Licensing info *}
+			 Licensing info
 			{if $currentContext->getLocalizedData('licenseTerms') || $publication->getData('licenseUrl')}
 				<div class="item copyright">
 					<h2 class="label">
@@ -479,3 +564,5 @@
 	</div><!-- .row -->
 
 </article>
+
+
