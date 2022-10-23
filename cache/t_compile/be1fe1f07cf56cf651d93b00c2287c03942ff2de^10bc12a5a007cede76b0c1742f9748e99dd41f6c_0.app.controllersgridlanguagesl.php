@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2022-10-13 14:56:11
+/* Smarty version 3.1.39, created on 2022-10-20 22:55:37
   from 'app:controllersgridlanguagesl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6347fcdb790b75_85276083',
+  'unifunc' => 'content_6351a7b9d15357_46918869',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '10bc12a5a007cede76b0c1742f9748e99dd41f6c' => 
     array (
       0 => 'app:controllersgridlanguagesl',
-      1 => 1664910729,
+      1 => 1665931231,
       2 => 'app',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6347fcdb790b75_85276083 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6351a7b9d15357_46918869 (Smarty_Internal_Template $_smarty_tpl) {
 if ($_smarty_tpl->tpl_vars['id']->value) {?>
 	<?php $_smarty_tpl->_assignInScope('cellId', call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'concat' ][ 0 ], array( "cell-",$_smarty_tpl->tpl_vars['id']->value )));
 } else { ?>

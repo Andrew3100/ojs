@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2022-10-12 18:40:10
+/* Smarty version 3.1.39, created on 2022-10-23 13:09:22
   from 'app:controllersgridissueGalle' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6346dfda768004_33219553',
+  'unifunc' => 'content_635512d260c5a0_86079993',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '36f0aa1264a50a832773d56fa0bc2ab0e101d9c8' => 
     array (
       0 => 'app:controllersgridissueGalle',
-      1 => 1664910542,
+      1 => 1665931245,
       2 => 'app',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'app:controllers/fileUploadContainer.tpl' => 1,
   ),
 ),false)) {
-function content_6346dfda768004_33219553 (Smarty_Internal_Template $_smarty_tpl) {
+function content_635512d260c5a0_86079993 (Smarty_Internal_Template $_smarty_tpl) {
 echo '<script'; ?>
 >
 	$(function() {

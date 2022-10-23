@@ -29,6 +29,52 @@
 <!-- Bootstrap CSS -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
+
+<script>
+
+	function showissues() {
+		let elem = document.getElementById('show');
+		let arr = {
+				'block' : 'none',
+				'none' : 'block',
+	}
+		elem.style.display = arr[elem.style.display]
+	}
+
+</script>
+
+<style>
+
+	/* скрываем чекбоксы и блоки с содержанием */
+	.hide, .hide + label ~ div {
+		display: none;
+	}
+	/* вид текста label */
+	.hide + label,
+	.hide:checked + label {
+		padding: 0;
+		color: green;
+		cursor: pointer;
+		border-bottom: 1px dotted green;
+	}
+	/* вид текста label при активном переключателе */
+	.hide:checked + label {
+		color: red;
+		border-bottom: 0;
+	}
+	/* когда чекбокс активен показываем блоки с содержанием  */
+	.hide:checked + label + div {
+		display: block;
+		background: #efefef;
+		-moz-box-shadow: inset 3px 3px 10px #7d8e8f;
+		-webkit-box-shadow: inset 3px 3px 10px #7d8e8f;
+		box-shadow: inset 3px 3px 10px #7d8e8f;
+		padding: 10px;
+	}
+
+</style>
+
+
 <body class="pkp_page_{$requestedPage|escape|default:"index"} pkp_op_{$requestedOp|escape|default:"index"}{if $showingLogo} has_site_logo{/if}" dir="{$currentLocaleLangDir|escape|default:"ltr"}">
 
 <div class="container-fluid">

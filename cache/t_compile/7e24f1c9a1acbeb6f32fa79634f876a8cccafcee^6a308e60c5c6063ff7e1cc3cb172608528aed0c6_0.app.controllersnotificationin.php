@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2022-10-12 18:40:10
+/* Smarty version 3.1.39, created on 2022-10-23 13:09:22
   from 'app:controllersnotificationin' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6346dfdabb7012_18103908',
+  'unifunc' => 'content_635512d26d1f32_33257406',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6a308e60c5c6063ff7e1cc3cb172608528aed0c6' => 
     array (
       0 => 'app:controllersnotificationin',
-      1 => 1664910729,
+      1 => 1665931231,
       2 => 'app',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6346dfdabb7012_18103908 (Smarty_Internal_Template $_smarty_tpl) {
+function content_635512d26d1f32_33257406 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div id="pkp_notification_<?php echo call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'escape' ][ 0 ], array( $_smarty_tpl->tpl_vars['notificationId']->value ));?>
 "<?php if ($_smarty_tpl->tpl_vars['notificationStyleClass']->value) {?> class="<?php echo $_smarty_tpl->tpl_vars['notificationStyleClass']->value;?>
 "<?php }?>>

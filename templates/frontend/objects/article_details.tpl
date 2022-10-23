@@ -86,9 +86,9 @@
 					{if $publication->getData('datePublished')}
 						<div class="item published">
 					<section class="sub_item">
-						<h2 class="label">
-							{translate key="submissions.published"}
-						</h2>
+{*						<h2 class="label">*}
+{*							{translate key="submissions.published"}*}
+{*						</h2>*}
 						<div class="value">
 							{* If this is the original version *}
 							{if $firstPublication->getID() === $publication->getId()}
@@ -125,8 +125,6 @@
 
 				</span>
 			</div>
-			<br>
-			<br>
 			<div class="row">
 				<h5 style="color: #c4c4c7"><b>
 					{foreach from=$publication->getData('authors') item=author}
@@ -134,7 +132,6 @@
 					{/foreach}
 				</b></h5>
 			</div>
-			<br>
 			<br>
 			<div class="row">
 				<span style="color: black">
@@ -152,14 +149,13 @@
 				</span>
 			</div>
 			<br>
-			<br>
 			<div class="row">
 				<span style="color: black">
 
 					{* Аннотация *}
 					{if $publication->getLocalizedData('abstract')}
 						<section class="item abstract">
-					<h2 class="label">{translate key="article.abstract"}</h2>
+{*					<h2 class="label">{translate key="article.abstract"}</h2>*}
 					{$publication->getLocalizedData('abstract')|strip_unsafe_html}
 				</section>
 					{/if}
@@ -173,396 +169,538 @@
 		</div>
 		<div class="col-3">
 			<div class="row">
-				<div class="div" style="background-color: #dbb86d">
-					<a class="title" href="{url page="issue" op="view" path=$issue->getBestIssueId()}">
-						<div style="padding-top: 12px; padding-bottom: 12px; text-align: center">Выпуск 2022</div>
-					</a>
+				<div class="div" style="background-color: #dab058">
+					<div class="container-fluid" onclick="showissues()">
+						<div class="row" >
+							<div class="col-9">
+{*								<a class="title" href="{url page="issue" op="view" path=$issue->getBestIssueId()}" style="text-decoration: none">*}
+									<div style="padding-top: 12px; padding-bottom: 12px; text-align: center; font-size: 18pt; color: white;">Выпуск 2022 (4)</div>
+{*								</a>*}
+							</div>
+							<div class="col-3">
+								<a class="title" href="{url page="issue" op="view" path=$issue->getBestIssueId()}" style="text-decoration: none">
+								<img src="{$publicFilesDir}/logos/logo_issue_link.png" style="width: 130%; height: 80%; padding-top: 12px;">
+								</a>
+							</div>
+						</div>
+
+					</div>
+
 				</div>
 			</div>
+
+
+			<div class="row" id="show" style="display: none">
+				<div class="col">
+					<div class="row">
+						<div class="col">
+							1
+						</div>
+						<div class="col">
+							2
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+							3
+						</div>
+						<div class="col">
+							4
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<br>
 			<div class="row">
+				<div class="div"  style="background-color: #dab058">
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-9">
+								<span class="title" href="{url page="issue" op="view" path=$issue->getBestIssueId()}" style="text-decoration: none">
+									<div style="padding-top: 12px; padding-bottom: 12px; text-align: center; font-size: 18pt; color: white;">Метрика статьи</div>
+								</span>
+							</div>
+							<div class="col-3">
+								<a class="title" href="{url page="issue" op="view" path=$issue->getBestIssueId()}" style="text-decoration: none">
+									<img src="{$publicFilesDir}/logos/logo_article_metric.png" style="width: 130%; height: 80%; padding-top: 12px;">
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="div" style="border-style: solid; border-color: #dab058; background-color: #f5f5f5">
+					<div class="container-fluid">
+						<br>
+
+						<div class="row">
+							<div class="col-3">
+								<a class="title" href="{url page="issue" op="view" path=$issue->getBestIssueId()}" style="text-decoration: none">
+									<img src="{$publicFilesDir}/logos/logo_article_cite.png" style="width: 130%; height: 80%; padding-top: 12px;">
+								</a>
+							</div>
+							<div class="col-9">
+								<span class="title" href="{url page="issue" op="view" path=$issue->getBestIssueId()}" style="text-decoration: none">
+									<div style="padding-top: 12px; padding-bottom: 12px; text-align: center; font-size: 14pt; color: black;">Цитировать</div>
+								</span>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-3">
+								<a class="title" href="{url page="issue" op="view" path=$issue->getBestIssueId()}" style="text-decoration: none">
+									<img src="{$publicFilesDir}/logos/logo_article_shared.png" style="width: 130%; height: 80%; padding-top: 12px;">
+								</a>
+							</div>
+							<div class="col-9">
+								<span class="title" href="{url page="issue" op="view" path=$issue->getBestIssueId()}" style="text-decoration: none">
+									<div style="padding-top: 12px; padding-bottom: 12px; text-align: center; font-size: 14pt; color: black;">Поделиться</div>
+								</span>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-3">
+								<a class="title" href="{url page="issue" op="view" path=$issue->getBestIssueId()}" style="text-decoration: none">
+									<img src="{$publicFilesDir}/logos/logo_article_au_connect.png" style="width: 130%; height: 80%; padding-top: 12px;">
+								</a>
+							</div>
+							<div class="col-9">
+								<span class="title" href="{url page="issue" op="view" path=$issue->getBestIssueId()}" style="text-decoration: none">
+									<div style="padding-top: 12px; padding-bottom: 12px; text-align: center; font-size: 14pt; color: black;">Связаться с автором</div>
+								</span>
+							</div>
+						</div>
+
+
+						<br>
+					</div>
+				</div>
+
+
+
 
 			</div>
+			<br>
+			<br>
+			<br>
 			<div class="row">
+				<div class="div" style="background-color: #dab058">
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-9">
+								<a class="title" href="{url page="issue" op="view" path=$issue->getBestIssueId()}" style="text-decoration: none">
+									<div style="padding-top: 12px; padding-bottom: 12px; text-align: center; font-size: 18pt; color: white;">Скачать статью</div>
+								</a>
+							</div>
+							<div class="col-3">
+								<a class="title" href="{url page="issue" op="view" path=$issue->getBestIssueId()}" style="text-decoration: none">
+									<img src="{$publicFilesDir}/logos/logos_article_load.png" style="width: 130%; height: 80%; padding-top: 12px;">
+								</a>
+							</div>
+						</div>
+					</div>
 
+				</div>
 			</div>
+
+
+			<div class="row">
+				<div class="div" style="background-color: #dab058">
+					<div class="container-fluid">
+
+
+						<input class="hide" id="hd-1" type="checkbox" >
+						<label for="hd-1">Нажмите здесь, чтобы открыть!</label>
+
+
+					</div>
+
+				</div>
+			</div>
+
+
+
+
 		</div>
 
 	</div>
 </div>
 
 
-<article class="obj_article_details">
+{*<article class="obj_article_details">*}
 
-	 Indicate if this is only a preview
-	{if $publication->getData('status') !== $smarty.const.STATUS_PUBLISHED}
-		<div class="cmp_notification notice">
-			{capture assign="submissionUrl"}{url page="workflow" op="access" path=$article->getId()}{/capture}
-			{translate key="submission.viewingPreview" url=$submissionUrl}
-		</div>
-		 Notification that this is an old version
-	{elseif $currentPublication->getId() !== $publication->getId()}
-		<div class="cmp_notification notice">
-			{capture assign="latestVersionUrl"}{url page="article" op="view" path=$article->getBestId()}{/capture}
-			{translate key="submission.outdatedVersion"
-			datePublished=$publication->getData('datePublished')|date_format:$dateFormatShort
-			urlRecentVersion=$latestVersionUrl|escape
-			}
-		</div>
-	{/if}
+{*	 Indicate if this is only a preview*}
+{*	{if $publication->getData('status') !== $smarty.const.STATUS_PUBLISHED}*}
+{*		<div class="cmp_notification notice">*}
+{*			{capture assign="submissionUrl"}{url page="workflow" op="access" path=$article->getId()}{/capture}*}
+{*			{translate key="submission.viewingPreview" url=$submissionUrl}*}
+{*		</div>*}
+{*		 Notification that this is an old version*}
+{*	{elseif $currentPublication->getId() !== $publication->getId()}*}
+{*		<div class="cmp_notification notice">*}
+{*			{capture assign="latestVersionUrl"}{url page="article" op="view" path=$article->getBestId()}{/capture}*}
+{*			{translate key="submission.outdatedVersion"*}
+{*			datePublished=$publication->getData('datePublished')|date_format:$dateFormatShort*}
+{*			urlRecentVersion=$latestVersionUrl|escape*}
+{*			}*}
+{*		</div>*}
+{*	{/if}*}
 
-	<h1 class="page_title">
-		{$publication->getLocalizedTitle()|escape}
-	</h1>
+{*	<h1 class="page_title">*}
+{*		{$publication->getLocalizedTitle()|escape}*}
+{*	</h1>*}
 
-	{if $publication->getLocalizedData('subtitle')}
-		<h2 class="subtitle">
-			{$publication->getLocalizedData('subtitle')|escape}
-		</h2>
-	{/if}
+{*	{if $publication->getLocalizedData('subtitle')}*}
+{*		<h2 class="subtitle">*}
+{*			{$publication->getLocalizedData('subtitle')|escape}*}
+{*		</h2>*}
+{*	{/if}*}
 
-	<div class="row">
-		<div class="main_entry">
+{*	<div class="row">*}
+{*		<div class="main_entry">*}
 
-			{if $publication->getData('authors')}
-				<section class="item authors">
-					<h2 class="pkp_screen_reader">{translate key="article.authors"}</h2>
-					<ul class="authors">
-						{foreach from=$publication->getData('authors') item=author}
-							<li>
-							<span class="name">
-								{$author->getFullName()|escape}
-							</span>
-								{if $author->getLocalizedData('affiliation')}
-									<span class="affiliation">
-									{$author->getLocalizedData('affiliation')|escape}
-										{if $author->getData('rorId')}
-											<a href="{$author->getData('rorId')|escape}">{$rorIdIcon}</a>
-										{/if}
-								</span>
-								{/if}
-								{if $author->getData('orcid')}
-									<span class="orcid">
-									{$orcidIcon}
-									<a href="{$author->getData('orcid')|escape}" target="_blank">
-										{$author->getData('orcid')|escape}
-									</a>
-								</span>
-								{/if}
-							</li>
-						{/foreach}
-					</ul>
-				</section>
-			{/if}
+{*			{if $publication->getData('authors')}*}
+{*				<section class="item authors">*}
+{*					<h2 class="pkp_screen_reader">{translate key="article.authors"}</h2>*}
+{*					<ul class="authors">*}
+{*						{foreach from=$publication->getData('authors') item=author}*}
+{*							<li>*}
+{*							<span class="name">*}
+{*								{$author->getFullName()|escape}*}
+{*							</span>*}
+{*								{if $author->getLocalizedData('affiliation')}*}
+{*									<span class="affiliation">*}
+{*									{$author->getLocalizedData('affiliation')|escape}*}
+{*										{if $author->getData('rorId')}*}
+{*											<a href="{$author->getData('rorId')|escape}">{$rorIdIcon}</a>*}
+{*										{/if}*}
+{*								</span>*}
+{*								{/if}*}
+{*								{if $author->getData('orcid')}*}
+{*									<span class="orcid">*}
+{*									{$orcidIcon}*}
+{*									<a href="{$author->getData('orcid')|escape}" target="_blank">*}
+{*										{$author->getData('orcid')|escape}*}
+{*									</a>*}
+{*								</span>*}
+{*								{/if}*}
+{*							</li>*}
+{*						{/foreach}*}
+{*					</ul>*}
+{*				</section>*}
+{*			{/if}*}
 
-			 DOI (requires plugin)
-			{foreach from=$pubIdPlugins item=pubIdPlugin}
-				{if $pubIdPlugin->getPubIdType() != 'doi'}
-					{continue}
-				{/if}
-				{assign var=pubId value=$article->getStoredPubId($pubIdPlugin->getPubIdType())}
-				{if $pubId}
-					{assign var="doiUrl" value=$pubIdPlugin->getResolvingURL($currentJournal->getId(), $pubId)|escape}
-					<section class="item doi">
-						<h2 class="label">
-							{capture assign=translatedDOI}{translate key="plugins.pubIds.doi.readerDisplayName"}{/capture}
-							{translate key="semicolon" label=$translatedDOI}
-						</h2>
-						<span class="value">
-							<a href="{$doiUrl}">
-								{$doiUrl}
-							</a>
-						</span>
-					</section>
-				{/if}
-			{/foreach}
+{*			 DOI (requires plugin)*}
+{*			{foreach from=$pubIdPlugins item=pubIdPlugin}*}
+{*				{if $pubIdPlugin->getPubIdType() != 'doi'}*}
+{*					{continue}*}
+{*				{/if}*}
+{*				{assign var=pubId value=$article->getStoredPubId($pubIdPlugin->getPubIdType())}*}
+{*				{if $pubId}*}
+{*					{assign var="doiUrl" value=$pubIdPlugin->getResolvingURL($currentJournal->getId(), $pubId)|escape}*}
+{*					<section class="item doi">*}
+{*						<h2 class="label">*}
+{*							{capture assign=translatedDOI}{translate key="plugins.pubIds.doi.readerDisplayName"}{/capture}*}
+{*							{translate key="semicolon" label=$translatedDOI}*}
+{*						</h2>*}
+{*						<span class="value">*}
+{*							<a href="{$doiUrl}">*}
+{*								{$doiUrl}*}
+{*							</a>*}
+{*						</span>*}
+{*					</section>*}
+{*				{/if}*}
+{*			{/foreach}*}
 
-			 Keywords
-			{if !empty($publication->getLocalizedData('keywords'))}
-				<section class="item keywords">
-					<h2 class="label">
-						{capture assign=translatedKeywords}{translate key="article.subject"}{/capture}
-						{translate key="semicolon" label=$translatedKeywords}
-					</h2>
-					<span class="value">
-					{foreach name="keywords" from=$publication->getLocalizedData('keywords') item="keyword"}
-						{$keyword|escape}{if !$smarty.foreach.keywords.last}{translate key="common.commaListSeparator"}{/if}
-					{/foreach}
-				</span>
-				</section>
-			{/if}
+{*			 Keywords*}
+{*			{if !empty($publication->getLocalizedData('keywords'))}*}
+{*				<section class="item keywords">*}
+{*					<h2 class="label">*}
+{*						{capture assign=translatedKeywords}{translate key="article.subject"}{/capture}*}
+{*						{translate key="semicolon" label=$translatedKeywords}*}
+{*					</h2>*}
+{*					<span class="value">*}
+{*					{foreach name="keywords" from=$publication->getLocalizedData('keywords') item="keyword"}*}
+{*						{$keyword|escape}{if !$smarty.foreach.keywords.last}{translate key="common.commaListSeparator"}{/if}*}
+{*					{/foreach}*}
+{*				</span>*}
+{*				</section>*}
+{*			{/if}*}
 
-			 Abstract
-			{if $publication->getLocalizedData('abstract')}
-				<section class="item abstract">
-					<h2 class="label">{translate key="article.abstract"}</h2>
-					{$publication->getLocalizedData('abstract')|strip_unsafe_html}
-				</section>
-			{/if}
+{*			 Abstract*}
+{*			{if $publication->getLocalizedData('abstract')}*}
+{*				<section class="item abstract">*}
+{*					<h2 class="label">{translate key="article.abstract"}</h2>*}
+{*					{$publication->getLocalizedData('abstract')|strip_unsafe_html}*}
+{*				</section>*}
+{*			{/if}*}
 
-			{call_hook name="Templates::Article::Main"}
+{*			{call_hook name="Templates::Article::Main"}*}
 
-			 Author biographies
-			{assign var="hasBiographies" value=0}
-			{foreach from=$publication->getData('authors') item=author}
-				{if $author->getLocalizedData('biography')}
-					{assign var="hasBiographies" value=$hasBiographies+1}
-				{/if}
-			{/foreach}
-			{if $hasBiographies}
-				<section class="item author_bios">
-					<h2 class="label">
-						{if $hasBiographies > 1}
-							{translate key="submission.authorBiographies"}
-						{else}
-							{translate key="submission.authorBiography"}
-						{/if}
-					</h2>
-					{foreach from=$publication->getData('authors') item=author}
-						{if $author->getLocalizedData('biography')}
-							<section class="sub_item">
-								<h3 class="label">
-									{if $author->getLocalizedData('affiliation')}
-										{capture assign="authorName"}{$author->getFullName()|escape}{/capture}
-										{capture assign="authorAffiliation"}<span class="affiliation">{$author->getLocalizedData('affiliation')|escape}</span>{/capture}
-										{translate key="submission.authorWithAffiliation" name=$authorName affiliation=$authorAffiliation}
-									{else}
-										{$author->getFullName()|escape}
-									{/if}
-								</h3>
-								<div class="value">
-									{$author->getLocalizedData('biography')|strip_unsafe_html}
-								</div>
-							</section>
-						{/if}
-					{/foreach}
-				</section>
-			{/if}
+{*			 Author biographies*}
+{*			{assign var="hasBiographies" value=0}*}
+{*			{foreach from=$publication->getData('authors') item=author}*}
+{*				{if $author->getLocalizedData('biography')}*}
+{*					{assign var="hasBiographies" value=$hasBiographies+1}*}
+{*				{/if}*}
+{*			{/foreach}*}
+{*			{if $hasBiographies}*}
+{*				<section class="item author_bios">*}
+{*					<h2 class="label">*}
+{*						{if $hasBiographies > 1}*}
+{*							{translate key="submission.authorBiographies"}*}
+{*						{else}*}
+{*							{translate key="submission.authorBiography"}*}
+{*						{/if}*}
+{*					</h2>*}
+{*					{foreach from=$publication->getData('authors') item=author}*}
+{*						{if $author->getLocalizedData('biography')}*}
+{*							<section class="sub_item">*}
+{*								<h3 class="label">*}
+{*									{if $author->getLocalizedData('affiliation')}*}
+{*										{capture assign="authorName"}{$author->getFullName()|escape}{/capture}*}
+{*										{capture assign="authorAffiliation"}<span class="affiliation">{$author->getLocalizedData('affiliation')|escape}</span>{/capture}*}
+{*										{translate key="submission.authorWithAffiliation" name=$authorName affiliation=$authorAffiliation}*}
+{*									{else}*}
+{*										{$author->getFullName()|escape}*}
+{*									{/if}*}
+{*								</h3>*}
+{*								<div class="value">*}
+{*									{$author->getLocalizedData('biography')|strip_unsafe_html}*}
+{*								</div>*}
+{*							</section>*}
+{*						{/if}*}
+{*					{/foreach}*}
+{*				</section>*}
+{*			{/if}*}
 
-			 References
-			{if $parsedCitations || $publication->getData('citationsRaw')}
-				<section class="item references">
-					<h2 class="label">
-						{translate key="submission.citations"}
-					</h2>
-					<div class="value">
-						{if $parsedCitations}
-							{foreach from=$parsedCitations item="parsedCitation"}
-								<p>{$parsedCitation->getCitationWithLinks()|strip_unsafe_html} {call_hook name="Templates::Article::Details::Reference" citation=$parsedCitation}</p>
-							{/foreach}
-						{else}
-							{$publication->getData('citationsRaw')|escape|nl2br}
-						{/if}
-					</div>
-				</section>
-			{/if}
+{*			 References*}
+{*			{if $parsedCitations || $publication->getData('citationsRaw')}*}
+{*				<section class="item references">*}
+{*					<h2 class="label">*}
+{*						{translate key="submission.citations"}*}
+{*					</h2>*}
+{*					<div class="value">*}
+{*						{if $parsedCitations}*}
+{*							{foreach from=$parsedCitations item="parsedCitation"}*}
+{*								<p>{$parsedCitation->getCitationWithLinks()|strip_unsafe_html} {call_hook name="Templates::Article::Details::Reference" citation=$parsedCitation}</p>*}
+{*							{/foreach}*}
+{*						{else}*}
+{*							{$publication->getData('citationsRaw')|escape|nl2br}*}
+{*						{/if}*}
+{*					</div>*}
+{*				</section>*}
+{*			{/if}*}
 
-		</div><!-- .main_entry -->
+{*		</div><!-- .main_entry -->*}
 
-		<div class="entry_details">
+{*		<div class="entry_details">*}
 
-			 Article/Issue cover image
-			{if $publication->getLocalizedData('coverImage') || ($issue && $issue->getLocalizedCoverImage())}
-				<div class="item cover_image">
-					<div class="sub_item">
-						{if $publication->getLocalizedData('coverImage')}
-							{assign var="coverImage" value=$publication->getLocalizedData('coverImage')}
-							<img
-									src="{$publication->getLocalizedCoverImageUrl($article->getData('contextId'))|escape}"
-									alt="{$coverImage.altText|escape|default:''}"
-							>
-						{else}
-							<a href="{url page="issue" op="view" path=$issue->getBestIssueId()}">
-								<img src="{$issue->getLocalizedCoverImageUrl()|escape}" alt="{$issue->getLocalizedCoverImageAltText()|escape|default:''}">
-							</a>
-						{/if}
-					</div>
-				</div>
-			{/if}
+{*			 Article/Issue cover image*}
+{*			{if $publication->getLocalizedData('coverImage') || ($issue && $issue->getLocalizedCoverImage())}*}
+{*				<div class="item cover_image">*}
+{*					<div class="sub_item">*}
+{*						{if $publication->getLocalizedData('coverImage')}*}
+{*							{assign var="coverImage" value=$publication->getLocalizedData('coverImage')}*}
+{*							<img*}
+{*									src="{$publication->getLocalizedCoverImageUrl($article->getData('contextId'))|escape}"*}
+{*									alt="{$coverImage.altText|escape|default:''}"*}
+{*							>*}
+{*						{else}*}
+{*							<a href="{url page="issue" op="view" path=$issue->getBestIssueId()}">*}
+{*								<img src="{$issue->getLocalizedCoverImageUrl()|escape}" alt="{$issue->getLocalizedCoverImageAltText()|escape|default:''}">*}
+{*							</a>*}
+{*						{/if}*}
+{*					</div>*}
+{*				</div>*}
+{*			{/if}*}
 
-			 Article Galleys
-			{if $primaryGalleys}
-				<div class="item galleys">
-					<h2 class="pkp_screen_reader">
-						{translate key="submission.downloads"}
-					</h2>
-					<ul class="value galleys_links">
-						{foreach from=$primaryGalleys item=galley}
-							<li>
-								{include file="frontend/objects/galley_link.tpl" parent=$article publication=$publication galley=$galley purchaseFee=$currentJournal->getData('purchaseArticleFee') purchaseCurrency=$currentJournal->getData('currency')}
-							</li>
-						{/foreach}
-					</ul>
-				</div>
-			{/if}
-			{if $supplementaryGalleys}
-				<div class="item galleys">
-					<h3 class="pkp_screen_reader">
-						{translate key="submission.additionalFiles"}
-					</h3>
-					<ul class="value supplementary_galleys_links">
-						{foreach from=$supplementaryGalleys item=galley}
-							<li>
-								{include file="frontend/objects/galley_link.tpl" parent=$article publication=$publication galley=$galley isSupplementary="1"}
-							</li>
-						{/foreach}
-					</ul>
-				</div>
-			{/if}
+{*			 Article Galleys*}
+{*			{if $primaryGalleys}*}
+{*				<div class="item galleys">*}
+{*					<h2 class="pkp_screen_reader">*}
+{*						{translate key="submission.downloads"}*}
+{*					</h2>*}
+{*					<ul class="value galleys_links">*}
+{*						{foreach from=$primaryGalleys item=galley}*}
+{*							<li>*}
+{*								{include file="frontend/objects/galley_link.tpl" parent=$article publication=$publication galley=$galley purchaseFee=$currentJournal->getData('purchaseArticleFee') purchaseCurrency=$currentJournal->getData('currency')}*}
+{*							</li>*}
+{*						{/foreach}*}
+{*					</ul>*}
+{*				</div>*}
+{*			{/if}*}
+{*			{if $supplementaryGalleys}*}
+{*				<div class="item galleys">*}
+{*					<h3 class="pkp_screen_reader">*}
+{*						{translate key="submission.additionalFiles"}*}
+{*					</h3>*}
+{*					<ul class="value supplementary_galleys_links">*}
+{*						{foreach from=$supplementaryGalleys item=galley}*}
+{*							<li>*}
+{*								{include file="frontend/objects/galley_link.tpl" parent=$article publication=$publication galley=$galley isSupplementary="1"}*}
+{*							</li>*}
+{*						{/foreach}*}
+{*					</ul>*}
+{*				</div>*}
+{*			{/if}*}
 
 
 
-			 How to cite
-			{if $citation}
-				<div class="item citation">
-					<section class="sub_item citation_display">
-						<h2 class="label">
-							{translate key="submission.howToCite"}
-						</h2>
-						<div class="value">
-							<div id="citationOutput" role="region" aria-live="polite">
-								{$citation}
-							</div>
-							<div class="citation_formats">
-								<button class="cmp_button citation_formats_button" aria-controls="cslCitationFormats" aria-expanded="false" data-csl-dropdown="true">
-									{translate key="submission.howToCite.citationFormats"}
-								</button>
-								<div id="cslCitationFormats" class="citation_formats_list" aria-hidden="true">
-									<ul class="citation_formats_styles">
-										{foreach from=$citationStyles item="citationStyle"}
-											<li>
-												<a
-														aria-controls="citationOutput"
-														href="{url page="citationstylelanguage" op="get" path=$citationStyle.id params=$citationArgs}"
-														data-load-citation
-														data-json-href="{url page="citationstylelanguage" op="get" path=$citationStyle.id params=$citationArgsJson}"
-												>
-													{$citationStyle.title|escape}
-												</a>
-											</li>
-										{/foreach}
-									</ul>
-									{if count($citationDownloads)}
-										<div class="label">
-											{translate key="submission.howToCite.downloadCitation"}
-										</div>
-										<ul class="citation_formats_styles">
-											{foreach from=$citationDownloads item="citationDownload"}
-												<li>
-													<a href="{url page="citationstylelanguage" op="download" path=$citationDownload.id params=$citationArgs}">
-														<span class="fa fa-download"></span>
-														{$citationDownload.title|escape}
-													</a>
-												</li>
-											{/foreach}
-										</ul>
-									{/if}
-								</div>
-							</div>
-						</div>
-					</section>
-				</div>
-			{/if}
+{*			 How to cite*}
+{*			{if $citation}*}
+{*				<div class="item citation">*}
+{*					<section class="sub_item citation_display">*}
+{*						<h2 class="label">*}
+{*							{translate key="submission.howToCite"}*}
+{*						</h2>*}
+{*						<div class="value">*}
+{*							<div id="citationOutput" role="region" aria-live="polite">*}
+{*								{$citation}*}
+{*							</div>*}
+{*							<div class="citation_formats">*}
+{*								<button class="cmp_button citation_formats_button" aria-controls="cslCitationFormats" aria-expanded="false" data-csl-dropdown="true">*}
+{*									{translate key="submission.howToCite.citationFormats"}*}
+{*								</button>*}
+{*								<div id="cslCitationFormats" class="citation_formats_list" aria-hidden="true">*}
+{*									<ul class="citation_formats_styles">*}
+{*										{foreach from=$citationStyles item="citationStyle"}*}
+{*											<li>*}
+{*												<a*}
+{*														aria-controls="citationOutput"*}
+{*														href="{url page="citationstylelanguage" op="get" path=$citationStyle.id params=$citationArgs}"*}
+{*														data-load-citation*}
+{*														data-json-href="{url page="citationstylelanguage" op="get" path=$citationStyle.id params=$citationArgsJson}"*}
+{*												>*}
+{*													{$citationStyle.title|escape}*}
+{*												</a>*}
+{*											</li>*}
+{*										{/foreach}*}
+{*									</ul>*}
+{*									{if count($citationDownloads)}*}
+{*										<div class="label">*}
+{*											{translate key="submission.howToCite.downloadCitation"}*}
+{*										</div>*}
+{*										<ul class="citation_formats_styles">*}
+{*											{foreach from=$citationDownloads item="citationDownload"}*}
+{*												<li>*}
+{*													<a href="{url page="citationstylelanguage" op="download" path=$citationDownload.id params=$citationArgs}">*}
+{*														<span class="fa fa-download"></span>*}
+{*														{$citationDownload.title|escape}*}
+{*													</a>*}
+{*												</li>*}
+{*											{/foreach}*}
+{*										</ul>*}
+{*									{/if}*}
+{*								</div>*}
+{*							</div>*}
+{*						</div>*}
+{*					</section>*}
+{*				</div>*}
+{*			{/if}*}
 
-			 Issue article appears in
-			{if $issue || $section || $categories}
-				<div class="item issue">
+{*			 Issue article appears in*}
+{*			{if $issue || $section || $categories}*}
+{*				<div class="item issue">*}
 
-					{if $issue}
-						<section class="sub_item">
-							<h2 class="label">
-								{translate key="issue.issue"}
-							</h2>
-							<div class="value">
-								<a class="title" href="{url page="issue" op="view" path=$issue->getBestIssueId()}">
-									{$issue->getIssueIdentification()}
-								</a>
-							</div>
-						</section>
-					{/if}
+{*					{if $issue}*}
+{*						<section class="sub_item">*}
+{*							<h2 class="label">*}
+{*								{translate key="issue.issue"}*}
+{*							</h2>*}
+{*							<div class="value">*}
+{*								<a class="title" href="{url page="issue" op="view" path=$issue->getBestIssueId()}">*}
+{*									{$issue->getIssueIdentification()}*}
+{*								</a>*}
+{*							</div>*}
+{*						</section>*}
+{*					{/if}*}
 
-					{if $section}
-						<section class="sub_item">
-							<h2 class="label">
-								{translate key="section.section"}
-							</h2>
-							<div class="value">
-								{$section->getLocalizedTitle()|escape}
-							</div>
-						</section>
-					{/if}
+{*					{if $section}*}
+{*						<section class="sub_item">*}
+{*							<h2 class="label">*}
+{*								{translate key="section.section"}*}
+{*							</h2>*}
+{*							<div class="value">*}
+{*								{$section->getLocalizedTitle()|escape}*}
+{*							</div>*}
+{*						</section>*}
+{*					{/if}*}
 
-					{if $categories}
-						<section class="sub_item">
-							<h2 class="label">
-								{translate key="category.category"}
-							</h2>
-							<div class="value">
-								<ul class="categories">
-									{foreach from=$categories item=category}
-										<li><a href="{url router=$smarty.const.ROUTE_PAGE page="catalog" op="category" path=$category->getPath()|escape}">{$category->getLocalizedTitle()|escape}</a></li>
-									{/foreach}
-								</ul>
-							</div>
-						</section>
-					{/if}
-				</div>
-			{/if}
+{*					{if $categories}*}
+{*						<section class="sub_item">*}
+{*							<h2 class="label">*}
+{*								{translate key="category.category"}*}
+{*							</h2>*}
+{*							<div class="value">*}
+{*								<ul class="categories">*}
+{*									{foreach from=$categories item=category}*}
+{*										<li><a href="{url router=$smarty.const.ROUTE_PAGE page="catalog" op="category" path=$category->getPath()|escape}">{$category->getLocalizedTitle()|escape}</a></li>*}
+{*									{/foreach}*}
+{*								</ul>*}
+{*							</div>*}
+{*						</section>*}
+{*					{/if}*}
+{*				</div>*}
+{*			{/if}*}
 
-			 PubIds (requires plugins)
-			{foreach from=$pubIdPlugins item=pubIdPlugin}
-				{if $pubIdPlugin->getPubIdType() == 'doi'}
-					{continue}
-				{/if}
-				{assign var=pubId value=$article->getStoredPubId($pubIdPlugin->getPubIdType())}
-				{if $pubId}
-					<section class="item pubid">
-						<h2 class="label">
-							{$pubIdPlugin->getPubIdDisplayType()|escape}
-						</h2>
-						<div class="value">
-							{if $pubIdPlugin->getResolvingURL($currentJournal->getId(), $pubId)|escape}
-								<a id="pub-id::{$pubIdPlugin->getPubIdType()|escape}" href="{$pubIdPlugin->getResolvingURL($currentJournal->getId(), $pubId)|escape}">
-									{$pubIdPlugin->getResolvingURL($currentJournal->getId(), $pubId)|escape}
-								</a>
-							{else}
-								{$pubId|escape}
-							{/if}
-						</div>
-					</section>
-				{/if}
-			{/foreach}
+{*			 PubIds (requires plugins)*}
+{*			{foreach from=$pubIdPlugins item=pubIdPlugin}*}
+{*				{if $pubIdPlugin->getPubIdType() == 'doi'}*}
+{*					{continue}*}
+{*				{/if}*}
+{*				{assign var=pubId value=$article->getStoredPubId($pubIdPlugin->getPubIdType())}*}
+{*				{if $pubId}*}
+{*					<section class="item pubid">*}
+{*						<h2 class="label">*}
+{*							{$pubIdPlugin->getPubIdDisplayType()|escape}*}
+{*						</h2>*}
+{*						<div class="value">*}
+{*							{if $pubIdPlugin->getResolvingURL($currentJournal->getId(), $pubId)|escape}*}
+{*								<a id="pub-id::{$pubIdPlugin->getPubIdType()|escape}" href="{$pubIdPlugin->getResolvingURL($currentJournal->getId(), $pubId)|escape}">*}
+{*									{$pubIdPlugin->getResolvingURL($currentJournal->getId(), $pubId)|escape}*}
+{*								</a>*}
+{*							{else}*}
+{*								{$pubId|escape}*}
+{*							{/if}*}
+{*						</div>*}
+{*					</section>*}
+{*				{/if}*}
+{*			{/foreach}*}
 
-			 Licensing info
-			{if $currentContext->getLocalizedData('licenseTerms') || $publication->getData('licenseUrl')}
-				<div class="item copyright">
-					<h2 class="label">
-						{translate key="submission.license"}
-					</h2>
-					{if $publication->getData('licenseUrl')}
-						{if $ccLicenseBadge}
-							{if $publication->getLocalizedData('copyrightHolder')}
-								<p>{translate key="submission.copyrightStatement" copyrightHolder=$publication->getLocalizedData('copyrightHolder') copyrightYear=$publication->getData('copyrightYear')}</p>
-							{/if}
-							{$ccLicenseBadge}
-						{else}
-							<a href="{$publication->getData('licenseUrl')|escape}" class="copyright">
-								{if $publication->getLocalizedData('copyrightHolder')}
-									{translate key="submission.copyrightStatement" copyrightHolder=$publication->getLocalizedData('copyrightHolder') copyrightYear=$publication->getData('copyrightYear')}
-								{else}
-									{translate key="submission.license"}
-								{/if}
-							</a>
-						{/if}
-					{/if}
-					{$currentContext->getLocalizedData('licenseTerms')}
-				</div>
-			{/if}
+{*			 Licensing info*}
+{*			{if $currentContext->getLocalizedData('licenseTerms') || $publication->getData('licenseUrl')}*}
+{*				<div class="item copyright">*}
+{*					<h2 class="label">*}
+{*						{translate key="submission.license"}*}
+{*					</h2>*}
+{*					{if $publication->getData('licenseUrl')}*}
+{*						{if $ccLicenseBadge}*}
+{*							{if $publication->getLocalizedData('copyrightHolder')}*}
+{*								<p>{translate key="submission.copyrightStatement" copyrightHolder=$publication->getLocalizedData('copyrightHolder') copyrightYear=$publication->getData('copyrightYear')}</p>*}
+{*							{/if}*}
+{*							{$ccLicenseBadge}*}
+{*						{else}*}
+{*							<a href="{$publication->getData('licenseUrl')|escape}" class="copyright">*}
+{*								{if $publication->getLocalizedData('copyrightHolder')}*}
+{*									{translate key="submission.copyrightStatement" copyrightHolder=$publication->getLocalizedData('copyrightHolder') copyrightYear=$publication->getData('copyrightYear')}*}
+{*								{else}*}
+{*									{translate key="submission.license"}*}
+{*								{/if}*}
+{*							</a>*}
+{*						{/if}*}
+{*					{/if}*}
+{*					{$currentContext->getLocalizedData('licenseTerms')}*}
+{*				</div>*}
+{*			{/if}*}
 
-			{call_hook name="Templates::Article::Details"}
+{*			{call_hook name="Templates::Article::Details"}*}
 
-		</div><!-- .entry_details -->
-	</div><!-- .row -->
+{*		</div><!-- .entry_details -->*}
+{*	</div><!-- .row -->*}
 
-</article>
+{*</article>*}
 
 

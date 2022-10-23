@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2022-10-12 11:51:24
+/* Smarty version 3.1.39, created on 2022-10-20 22:45:49
   from 'app:controllersgridfeaturegri' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6346800c7e68c7_80852683',
+  'unifunc' => 'content_6351a56dba1374_90500690',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '190a5206d1275dc2778fc7b49f0a6119e83e959e' => 
     array (
       0 => 'app:controllersgridfeaturegri',
-      1 => 1664910729,
+      1 => 1665931231,
       2 => 'app',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6346800c7e68c7_80852683 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6351a56dba1374_90500690 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <div class="gridPaging">
 	<div class="gridItemsPerPage">

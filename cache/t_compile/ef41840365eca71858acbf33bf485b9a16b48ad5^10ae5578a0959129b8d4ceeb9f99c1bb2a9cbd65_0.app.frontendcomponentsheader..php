@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2022-10-21 18:38:25
+/* Smarty version 3.1.39, created on 2022-10-23 23:09:48
   from 'app:frontendcomponentsheader.' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6352bcf14cff12_31152985',
+  'unifunc' => 'content_63559f8cbb20b8_46314771',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '10ae5578a0959129b8d4ceeb9f99c1bb2a9cbd65' => 
     array (
       0 => 'app:frontendcomponentsheader.',
-      1 => 1666359768,
+      1 => 1666555778,
       2 => 'app',
     ),
   ),
@@ -21,8 +21,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'app:frontend/components/headerHead.tpl' => 1,
   ),
 ),false)) {
-function content_6352bcf14cff12_31152985 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\OSPanel\\domains\\ojs\\lib\\pkp\\lib\\vendor\\smarty\\smarty\\libs\\plugins\\modifier.replace.php','function'=>'smarty_modifier_replace',),));
+function content_63559f8cbb20b8_46314771 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\OpenServer\\domains\\ojs\\lib\\pkp\\lib\\vendor\\smarty\\smarty\\libs\\plugins\\modifier.replace.php','function'=>'smarty_modifier_replace',),));
 $_smarty_tpl->_assignInScope('showingLogo', true);
 if (!$_smarty_tpl->tpl_vars['displayPageHeaderLogo']->value) {
 $_smarty_tpl->_assignInScope('showingLogo', false);
@@ -46,6 +46,50 @@ $_smarty_tpl->_subTemplateRender("app:frontend/components/headerHead.tpl", $_sma
 >
 <!-- Bootstrap CSS -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+<?php echo '<script'; ?>
+>
+
+	function showissues() {
+		let elem = document.getElementById('show');
+		elem.style.display('block')
+	}
+
+<?php echo '</script'; ?>
+>
+
+<style>
+
+	/* скрываем чекбоксы и блоки с содержанием */
+	.hide, .hide + label ~ div {
+		display: none;
+	}
+	/* вид текста label */
+	.hide + label,
+	.hide:checked + label {
+		padding: 0;
+		color: green;
+		cursor: pointer;
+		border-bottom: 1px dotted green;
+	}
+	/* вид текста label при активном переключателе */
+	.hide:checked + label {
+		color: red;
+		border-bottom: 0;
+	}
+	/* когда чекбокс активен показываем блоки с содержанием  */
+	.hide:checked + label + div {
+		display: block;
+		background: #efefef;
+		-moz-box-shadow: inset 3px 3px 10px #7d8e8f;
+		-webkit-box-shadow: inset 3px 3px 10px #7d8e8f;
+		box-shadow: inset 3px 3px 10px #7d8e8f;
+		padding: 10px;
+	}
+
+</style>
+
 
 <body class="pkp_page_<?php echo (($tmp = @call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'escape' ][ 0 ], array( $_smarty_tpl->tpl_vars['requestedPage']->value )))===null||$tmp==='' ? "index" : $tmp);?>
  pkp_op_<?php echo (($tmp = @call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'escape' ][ 0 ], array( $_smarty_tpl->tpl_vars['requestedOp']->value )))===null||$tmp==='' ? "index" : $tmp);

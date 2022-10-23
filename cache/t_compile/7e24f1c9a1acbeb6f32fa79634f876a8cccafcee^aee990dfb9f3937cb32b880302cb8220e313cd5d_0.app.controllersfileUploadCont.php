@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2022-10-12 18:40:10
+/* Smarty version 3.1.39, created on 2022-10-23 13:09:22
   from 'app:controllersfileUploadCont' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6346dfdaad6b72_12037664',
+  'unifunc' => 'content_635512d26a7503_65428362',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'aee990dfb9f3937cb32b880302cb8220e313cd5d' => 
     array (
       0 => 'app:controllersfileUploadCont',
-      1 => 1664910729,
+      1 => 1665931231,
       2 => 'app',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'app:controllers/notification/inPlaceNotificationContent.tpl' => 1,
   ),
 ),false)) {
-function content_6346dfdaad6b72_12037664 (Smarty_Internal_Template $_smarty_tpl) {
+function content_635512d26a7503_65428362 (Smarty_Internal_Template $_smarty_tpl) {
 if (!$_smarty_tpl->tpl_vars['stringDragFile']->value) {?>
 	<?php $_smarty_tpl->_assignInScope('stringDragFile', "common.upload.dragFile");
 }
